@@ -6,7 +6,7 @@ create procedure INSERTAR_CATEGORIA
 as Insert Into Categoria values (@nombre,@descripcion)
 go
 
-alter proc MODIFICAR_CATEGORIA
+create proc MODIFICAR_CATEGORIA
 @idcategoria int,
 @nombre varchar (50),
 @descripcion varchar (150)
@@ -15,7 +15,7 @@ where @idcategoria = idCategoria
 go
 
 create proc ELIMINAR_CATEGORIA
-@idcategoria int output
+@idcategoria int 
 as delete from Categoria 
 where @idcategoria = idCategoria
 go

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E09A6931-B137-49FB-8412-884371060729}</ProjectGuid>
+    <ProjectGuid>{1EAB1206-967B-40FD-8D72-F0A0A5DA5A58}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CapaDatos</RootNamespace>
@@ -41,10 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="DCategorias.cs" />
->>>>>>> bede02522d9a07222b7f3a2763d573b574d3b150
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

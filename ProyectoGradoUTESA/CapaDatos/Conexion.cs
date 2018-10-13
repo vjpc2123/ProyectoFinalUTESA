@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        private SqlConnection con = new SqlConnection("Data Source=DESKTOP-E0OV10B;Initial Catalog=CRUDFULL;Integrated Security=True");
+        private SqlConnection con = new SqlConnection("Data Source=DESKTOP-E0OV10B;Initial Catalog=Proyecto_Grado;Integrated Security=True");
 
         public SqlConnection AbriConexion()
         {
