@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="DCategorias.cs" />
+>>>>>>> bede02522d9a07222b7f3a2763d573b574d3b150
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
