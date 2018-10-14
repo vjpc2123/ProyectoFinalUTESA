@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-     class DCategorias
+    class DUbicacion
     {
-        private int _idCategoria;
-        public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
+
+        private int _idUbicacion;
+        public int IdUbicacion { get => _idUbicacion; set => _idUbicacion = value; }
 
         private string _nombre;
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -22,21 +23,21 @@ namespace CapaDatos
         private string _buscador;
         public string Buscador { get => _buscador; set => _buscador = value; }
 
-        public DCategorias()
+        public DUbicacion()
         {
 
 
         }
 
-        public DCategorias(int idcategoria,string nombre,string descripcion,string buscador)
+        public DUbicacion (int idubicacion, string nombre, string descripcion, string buscador)
         {
-            IdCategoria = idcategoria;
+            IdUbicacion = idubicacion;
             Nombre = nombre;
             Descripcion = descripcion;
             Buscador = buscador;
         }
 
-        public string InsertarCategorias(DCategorias Categorias)
+        public string InsertarUbicacion(DUbicacion Ubicacion)
         {
             string retorno = "";
             Conexion con = new Conexion();
@@ -46,12 +47,12 @@ namespace CapaDatos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "INSERTAR_CATEGORIA";
+                cmd.CommandText = "INSERTAR_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
                 SqlParameter parId = new SqlParameter();
-                parId.ParameterName = "@idcategoria";
+                parId.ParameterName = "@idubicacion";
                 parId.SqlDbType = SqlDbType.Int;
                 parId.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(parId);
@@ -60,14 +61,14 @@ namespace CapaDatos
                 parNombre.ParameterName = "@nombre";
                 parNombre.SqlDbType = SqlDbType.VarChar;
                 parNombre.Size = 50;
-                parNombre.Value = Categorias.Nombre;
+                parNombre.Value = Ubicacion.Nombre;
                 cmd.Parameters.Add(parNombre);
 
                 SqlParameter parDescripcion = new SqlParameter();
                 parDescripcion.ParameterName = "@descripcion";
                 parDescripcion.SqlDbType = SqlDbType.VarChar;
                 parDescripcion.Size = 150;
-                parDescripcion.Value = Categorias.Descripcion;
+                parDescripcion.Value = Ubicacion.Descripcion;
                 cmd.Parameters.Add(parDescripcion);
 
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
@@ -84,7 +85,7 @@ namespace CapaDatos
             return retorno;
         }
 
-        public string ModificarCategoria(DCategorias Categorias)
+        public string ModificarUbicacion(DUbicacion Ubicacion)
         {
             string retorno = "";
             Conexion con = new Conexion();
@@ -94,31 +95,31 @@ namespace CapaDatos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MODIFICAR_CATEGORIA";
+                cmd.CommandText = "MODIFICAR_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
                 SqlParameter parId = new SqlParameter();
-                parId.ParameterName = "@idcategoria";
+                parId.ParameterName = "@idubicacion";
                 parId.SqlDbType = SqlDbType.Int;
-                parId.Value = Categorias.IdCategoria;
+                parId.Value = Ubicacion.IdUbicacion;
                 cmd.Parameters.Add(parId);
 
                 SqlParameter parNombre = new SqlParameter();
                 parNombre.ParameterName = "@nombre";
                 parNombre.SqlDbType = SqlDbType.VarChar;
                 parNombre.Size = 50;
-                parNombre.Value = Categorias.Nombre;
+                parNombre.Value = Ubicacion.Nombre;
                 cmd.Parameters.Add(parNombre);
 
                 SqlParameter parDescripcion = new SqlParameter();
                 parDescripcion.ParameterName = "@descripcion";
                 parDescripcion.SqlDbType = SqlDbType.VarChar;
                 parDescripcion.Size = 150;
-                parDescripcion.Value = Categorias.Descripcion;
+                parDescripcion.Value = Ubicacion.Descripcion;
                 cmd.Parameters.Add(parDescripcion);
 
-                retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
+                retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible Modificar los datos";
             }
             catch (Exception ex)
             {
@@ -132,7 +133,7 @@ namespace CapaDatos
             return retorno;
         }
 
-        public string EliminarCategoria(DCategorias Categorias)
+        public string EliminarUbicacion(DUbicacion Ubicacion)
         {
             string retorno = "";
             Conexion con = new Conexion();
@@ -142,14 +143,14 @@ namespace CapaDatos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "ELIMINAR_CATEGORIA";
+                cmd.CommandText = "ELIMINAR_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter parIdCategoria = new SqlParameter();
-                parIdCategoria.ParameterName = "@idcategoria";
-                parIdCategoria.SqlDbType = SqlDbType.Int;
-                parIdCategoria.Value = Categorias.IdCategoria;
-                cmd.Parameters.Add(parIdCategoria);
+                SqlParameter parId = new SqlParameter();
+                parId.ParameterName = "@idubicacion";
+                parId.SqlDbType = SqlDbType.Int;
+                parId.Value = Ubicacion.IdUbicacion;
+                cmd.Parameters.Add(parId);
 
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se ha podido eliminar el Registro";
 
@@ -167,17 +168,17 @@ namespace CapaDatos
 
         }
 
-        public DataTable MostrarCategoria()
+        public DataTable MostrarUbicacion()
         {
-            DataTable dtReturn = new DataTable("Categoria");
+            DataTable dtReturn = new DataTable("Ubicacion");
             Conexion con = new Conexion();
             try
             {
-               
+
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MOSTRAR_TODOS_CATEGORIA";
+                cmd.CommandText = "MOSTRAR_TODOS_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -191,18 +192,18 @@ namespace CapaDatos
             return dtReturn;
         }
 
-        public DataTable BuscarCategoria_Nombre(DCategorias Categorias)
+        public DataTable BuscarUbicacion_Nombre(DUbicacion Ubicacion)
         {
-            DataTable dtretur = new DataTable("Categoria");
+            DataTable dtretur = new DataTable("Ubicacion");
             Conexion con = new Conexion();
 
 
             try
             {
-               
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MOSTRAR_NOMBRE_CATEGORIA";
+                cmd.CommandText = "MOSTRAR_NOMBRE_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
@@ -210,7 +211,7 @@ namespace CapaDatos
                 ParBuscador.ParameterName = "@nombre";
                 ParBuscador.SqlDbType = SqlDbType.VarChar;
                 ParBuscador.Size = 50;
-                ParBuscador.Value = Categorias.Buscador;
+                ParBuscador.Value = Ubicacion.Buscador;
                 cmd.Parameters.Add(ParBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -225,16 +226,16 @@ namespace CapaDatos
             return dtretur;
         }
 
-        public DataTable BuscarCategoria_Descripcion(DCategorias Categorias)
+        public DataTable BuscarUbicacion_Descripcion(DUbicacion Ubicacion)
         {
-            DataTable dtretur = new DataTable("Categoria");
+            DataTable dtretur = new DataTable("Ubicacion");
             Conexion con = new Conexion();
             try
             {
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MOSTRAR_NOMBRE_CATEGORIA";
+                cmd.CommandText = "MOSTRAR_NOMBRE_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
@@ -242,7 +243,7 @@ namespace CapaDatos
                 ParBuscador.ParameterName = "@descripcion";
                 ParBuscador.SqlDbType = SqlDbType.VarChar;
                 ParBuscador.Size = 150;
-                ParBuscador.Value = Categorias.Buscador;
+                ParBuscador.Value = Ubicacion.Buscador;
                 cmd.Parameters.Add(ParBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -256,6 +257,5 @@ namespace CapaDatos
             }
             return dtretur;
         }
-
     }
 }
