@@ -1,20 +1,22 @@
 /*Procedimiento almacenado Articulo*/
 
-create proc INSERTAR_ARTICULO
+alter proc INSERTAR_ARTICULO
 @idarticulo int output,
 @nombre varchar(50),
 @descripcion varchar(150),
 @imagen image,
 @idcategoria int,
-@idpresentacion int
+@idpresentacion int,
+@idubicacion int,
+@idmarca int
 as
-insert into Articulo(Nombre,Descripcion,Imagen,idCategoria,idPresentacion)
-values (@nombre,@descripcion,@imagen,@idcategoria,@idpresentacion)
+insert into Articulo(Nombre,Descripcion,Imagen,idCategoria,idPresentacion,idUbicacion,idMarca)
+values (@nombre,@descripcion,@imagen,@idcategoria,@idpresentacion,@idubicacion,@idmarca)
 SET @idarticulo = @@IDENTITY
 GO
 
 
-alter proc MODIFICAR_ARTICULO
+create proc MODIFICAR_ARTICULO
 @idarticulo int ,
 @nombre varchar(50),
 @descripcion varchar(150),
@@ -30,7 +32,7 @@ where @idarticulo = idArticulo
 go
 
 create proc ELIMINAR_ARTICULO
-@idarticulo int output
+@idarticulo int 
 as delete from Articulo 
 where @idarticulo = idArticulo
 go

@@ -34,6 +34,7 @@ constraint FK_MARCA_ARTICULO
 foreign key (idMarca) references Marca(idMarca)
 on update cascade
 on delete cascade
+go
 
 create table Ubicacion(
 idUbicacion int primary key identity(1,1),
