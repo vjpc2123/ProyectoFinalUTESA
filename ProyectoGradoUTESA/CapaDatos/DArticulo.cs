@@ -10,6 +10,9 @@ namespace CapaDatos
 {
     class DArticulo
     {
+        
+
+      
         private int _idArticulo;
         public int IdArticulo { get => _idArticulo; set => _idArticulo = value; }
 
@@ -17,10 +20,10 @@ namespace CapaDatos
         public string Nombre { get => _nombre; set => _nombre = value; }
 
         private string _descripcion;
-        public string Descripcion { get => _descripcion; set => _nombre = value; }
+        public string Descripcion { get => _descripcion; set => _descripcion = value; }
 
         private byte[] _imagen;
-        public byte[] Imagen { get => Imagen; set => _imagen = value; }
+        public byte[] Imagen { get => _imagen; set => _imagen = value; }
 
         private int _idCategoria;
         public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
@@ -29,7 +32,7 @@ namespace CapaDatos
         public int IdPresentacion { get => _idPresentacion; set => _idPresentacion = value; }
 
         private int _idUbicacion;
-        public int idUbicacion { get => _idUbicacion; set => _idUbicacion = value;}
+        public int idUbicacion { get => _idUbicacion; set => _idUbicacion = value; }
 
         private int _idMarca;
         public int IdMarca { get => _idMarca; set => _idMarca = value; }
@@ -37,11 +40,13 @@ namespace CapaDatos
         private string _buscador;
         public string Buscador { get => _buscador; set => _buscador = value; }
 
-
+        private int _buscadorcodigo;
+        public int Buscadorcodigo { get => _buscadorcodigo; set => _buscadorcodigo = value; }
+        
 
         public DArticulo() { }
 
-        public DArticulo(int idarticulo, string nombre, string desscripcion, int categoriaid, int presentacionid, int ubicacionid, int marcaid, string Buscador, byte[] Imagen)
+        public DArticulo(int idarticulo, string nombre, string desscripcion, int categoriaid, int presentacionid, int ubicacionid, int marcaid, string Buscador, byte[] Imagen,int buscarcodigo)
         {
             this.IdArticulo = idarticulo;
             this.Nombre = Nombre;
@@ -52,6 +57,7 @@ namespace CapaDatos
             this.IdMarca = marcaid;
             this.Buscador = Buscador;
             this.Imagen = Imagen;
+            this.Buscadorcodigo = buscarcodigo;
 
         }
 
@@ -129,7 +135,6 @@ namespace CapaDatos
             finally { con.CerrarConexion();}
             return Retorno;
         }
-
         public string Editar(DArticulo Articulo)
         {
             string Retorno = "";
@@ -204,8 +209,6 @@ namespace CapaDatos
             finally { con.CerrarConexion(); }
             return Retorno;
         }
-
-
         public string EliminarArticulo(DArticulo Articulo)
         {
             string msgRetorno = "";
@@ -232,23 +235,21 @@ namespace CapaDatos
 
                 msgRetorno = ex.Message;
             }
-            finally { con.AbriConexion(); }
+            finally { con.CerrarConexion(); }
 
             return msgRetorno;
         }
-
-        public DataTable MostrarLibro()
+        public DataTable MostrarTodosArticulos()
         {
-            DataTable DtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable DtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
 
             try
             {
-                con.Open();
+                
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "spmostrar_libro";
-                cmd.Connection = con;
+                cmd.CommandText = "MOSTRAR_TODOS_ARTICULOS";
+                cmd.Connection = con.AbriConexion();
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -261,30 +262,59 @@ namespace CapaDatos
             }
             return DtRetorno;
         }
-
-        public DataTable BuscarNombre_Libro(DLibro Libro)
+        public DataTable MostrarArticulo_Codigo(DArticulo Articulo)
         {
-            DataTable dtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable dtRetorno = new DataTable("Articulo");
+
+            Conexion con = new Conexion();
 
             try
             {
-                con.Open();
+                
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "spbuscar_nombre_libro";
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_CODIGO_ARTICULO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parBuscador = new SqlParameter();
+                parBuscador.ParameterName = "@buscador";
+                parBuscador.SqlDbType = SqlDbType.Int;
+                parBuscador.Value = Articulo.Buscadorcodigo;
+                cmd.Parameters.Add(parBuscador);
+
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                ad.Fill(dtRetorno);
+            }
+            catch (Exception)
+            {
+
+                dtRetorno = null;
+            }
+            return dtRetorno;
+        }
+        public DataTable MostrarArticulo_Nombre(DArticulo Articulo)
+        {
+            DataTable dtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
+            
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_NOMBRE_ARTICULO";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parBuscador = new SqlParameter();
                 parBuscador.ParameterName = "@buscador";
                 parBuscador.SqlDbType = SqlDbType.VarChar;
                 parBuscador.Size = 50;
-                parBuscador.Value = Libro.Buscador;
+                parBuscador.Value = Articulo.Buscador;
                 cmd.Parameters.Add(parBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ad.Fill(dtRetorno);
+
             }
             catch (Exception)
             {
@@ -292,27 +322,27 @@ namespace CapaDatos
                 dtRetorno = null;
             }
             return dtRetorno;
-        }
 
-        public DataTable Buscar_Genero_Libro(DLibro Libro)
+
+        }
+        public DataTable MostrarArticulo_Categoria(DArticulo Articulo)
         {
-            DataTable dtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable dtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
+
 
             try
             {
-                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "spbuscar_genero_libro";
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_NOMBRE_ARTICULO_CATE";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parBuscador = new SqlParameter();
                 parBuscador.ParameterName = "@buscador";
                 parBuscador.SqlDbType = SqlDbType.VarChar;
                 parBuscador.Size = 50;
-                parBuscador.Value = Libro.Buscador;
+                parBuscador.Value = Articulo.Buscador;
                 cmd.Parameters.Add(parBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -328,31 +358,28 @@ namespace CapaDatos
 
 
         }
-
-        public DataTable Buscar_Autor_Libro(DLibro Libro)
+        public DataTable MostrarArticulo_Presentacion(DArticulo Articulo)
         {
-            DataTable dtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable dtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
+
+
             try
             {
-                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "spbuscar_autor_libro";
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_NOMBRE_ARTICULO_PRESENT";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parBuscador = new SqlParameter();
                 parBuscador.ParameterName = "@buscador";
                 parBuscador.SqlDbType = SqlDbType.VarChar;
                 parBuscador.Size = 50;
-                parBuscador.Value = Libro.Buscador;
+                parBuscador.Value = Articulo.Buscador;
                 cmd.Parameters.Add(parBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ad.Fill(dtRetorno);
-
-
 
             }
             catch (Exception)
@@ -360,34 +387,32 @@ namespace CapaDatos
 
                 dtRetorno = null;
             }
-
             return dtRetorno;
 
-        }
 
-        public DataTable Buscar_Editorial_Libro(DLibro Libro)
+        }
+        public DataTable MostrarArticulo_Marca(DArticulo Articulo)
         {
-            DataTable dtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable dtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
+
+
             try
             {
-                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "spbuscar_editorial_libro";
-                cmd.Connection = con;
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_NOMBRE_ARTICULO_MARCA";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parBuscador = new SqlParameter();
                 parBuscador.ParameterName = "@buscador";
                 parBuscador.SqlDbType = SqlDbType.VarChar;
                 parBuscador.Size = 50;
-                parBuscador.Value = Libro.Buscador;
+                parBuscador.Value = Articulo.Buscador;
                 cmd.Parameters.Add(parBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ad.Fill(dtRetorno);
-
 
             }
             catch (Exception)
@@ -396,32 +421,32 @@ namespace CapaDatos
                 dtRetorno = null;
             }
             return dtRetorno;
+
+
         }
-
-
-        public DataTable BuscarInventa7rio(DArticulo Articulo)
+        public DataTable MostrarArticulo_Ubicacion(DArticulo Articulo)
         {
-            DataTable dtRetorno = new DataTable("Libro");
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Conexion.Cn;
+            DataTable dtRetorno = new DataTable("Articulo");
+            Conexion con = new Conexion();
+
 
             try
             {
-                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "SP_INVENTARIO";
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "MOSTRAR_NOMBRE_ARTICULO_UBIC";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parBuscador = new SqlParameter();
-                parBuscador.ParameterName = "@BUSCADOR";
+                parBuscador.ParameterName = "@buscador";
                 parBuscador.SqlDbType = SqlDbType.VarChar;
                 parBuscador.Size = 50;
-                parBuscador.Value = Libro.Buscador;
+                parBuscador.Value = Articulo.Buscador;
                 cmd.Parameters.Add(parBuscador);
 
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ad.Fill(dtRetorno);
+
             }
             catch (Exception)
             {
@@ -429,8 +454,9 @@ namespace CapaDatos
                 dtRetorno = null;
             }
             return dtRetorno;
-        }
 
+
+        }
 
         /*8fi9*/
     }
