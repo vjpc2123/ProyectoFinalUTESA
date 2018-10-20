@@ -1,0 +1,6 @@
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\obj\Debug\CapaNegocios.csprojAssemblyReference.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\obj\Debug\CapaNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\bin\Debug\CapaNegocios.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\bin\Debug\CapaNegocios.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\obj\Debug\CapaNegocios.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaNegocios\obj\Debug\CapaNegocios.pdb

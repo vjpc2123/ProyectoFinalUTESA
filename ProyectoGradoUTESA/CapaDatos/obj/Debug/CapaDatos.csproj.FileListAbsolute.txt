@@ -1,0 +1,6 @@
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.pdb

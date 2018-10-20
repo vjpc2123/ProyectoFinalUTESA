@@ -1,0 +1,10 @@
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.csprojAssemblyReference.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
