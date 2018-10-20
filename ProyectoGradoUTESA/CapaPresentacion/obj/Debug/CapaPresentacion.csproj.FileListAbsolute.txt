@@ -8,3 +8,8 @@ C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\De
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaNegocios.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaNegocios.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete

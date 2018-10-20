@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-     class DCategorias
+   public  class DCategorias
     {
         private int _idCategoria;
         public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
@@ -234,7 +234,7 @@ namespace CapaDatos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MOSTRAR_NOMBRE_CATEGORIA";
+                cmd.CommandText = "MOSTRAR_DESCRIPCION_CATEGORIA";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
