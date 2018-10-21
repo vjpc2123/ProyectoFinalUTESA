@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-     class DMarca
+    public class DMarca
     {
         private int _idMarca;
         public int IdMarca { get => _idMarca; set => _idMarca = value; }

@@ -71,6 +71,18 @@
     <Compile Include="frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarca.Designer.cs">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportes\rptCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes\rptCategorias.designer.cs">
+      <DependentUpon>rptCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoDTSET.cs">
@@ -81,15 +93,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProyectoDTSET.xsd</DependentUpon>
     </Compile>
-    <Compile Include="rptCategorias.cs">
+    <Compile Include="FrmReportes\rptMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptCategorias.Designer.cs">
-      <DependentUpon>rptCategorias.cs</DependentUpon>
+    <Compile Include="FrmReportes\rptMarcas.Designer.cs">
+      <DependentUpon>rptMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarca.resx">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportes\rptCategorias.resx">
+      <DependentUpon>rptCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,9 +119,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rptMarca.rdlc" />
     <EmbeddedResource Include="Reportes\rptCategorias.rdlc" />
-    <EmbeddedResource Include="rptCategorias.resx">
-      <DependentUpon>rptCategorias.cs</DependentUpon>
+    <EmbeddedResource Include="FrmReportes\rptMarcas.resx">
+      <DependentUpon>rptMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -170,6 +189,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Maintenance_65px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
