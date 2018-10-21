@@ -304,12 +304,7 @@ namespace CapaPresentacion
                             Codigo = Convert.ToString(row.Cells[1].Value);
                             Respuesta = NMarca.EliminarMarca(Convert.ToInt32(Codigo));
 
-                            if (Respuesta.Equals("Ok"))
-                            {
-
-                                MostrarDatos();
-                            }
-                            else
+                            if (Respuesta !="Ok")
                             {
                                 MsgError(Respuesta);
 
@@ -317,6 +312,7 @@ namespace CapaPresentacion
                         }
 
                     }
+                    MostrarDatos();
                     if (comparar != dtgvMarcas.RowCount)
                     {
                         MsgConfirmacion("Se han eliminado los datos correctamente");

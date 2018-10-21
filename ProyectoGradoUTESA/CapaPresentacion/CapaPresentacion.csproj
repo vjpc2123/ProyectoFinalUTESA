@@ -89,6 +89,12 @@
     <Compile Include="FrmReportes\rptCategorias.designer.cs">
       <DependentUpon>rptCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacion.Designer.cs">
+      <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoDTSET.cs">
@@ -111,6 +117,12 @@
     <Compile Include="FrmReportes\rptPresentacion.Designer.cs">
       <DependentUpon>rptPresentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportes\rptUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes\rptUbicacion.Designer.cs">
+      <DependentUpon>rptUbicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
@@ -124,6 +136,9 @@
     <EmbeddedResource Include="FrmReportes\rptCategorias.resx">
       <DependentUpon>rptCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacion.resx">
+      <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,6 +149,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rptUbicacion.rdlc" />
     <EmbeddedResource Include="Reportes\rptPresentacion.rdlc" />
     <EmbeddedResource Include="Reportes\rptMarca.rdlc" />
     <EmbeddedResource Include="Reportes\rptCategorias.rdlc" />
@@ -142,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportes\rptPresentacion.resx">
       <DependentUpon>rptPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportes\rptUbicacion.resx">
+      <DependentUpon>rptUbicacion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

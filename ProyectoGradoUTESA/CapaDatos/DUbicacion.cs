@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    class DUbicacion
+   public class DUbicacion
     {
 
         private int _idUbicacion;
@@ -235,7 +235,7 @@ namespace CapaDatos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
-                cmd.CommandText = "MOSTRAR_NOMBRE_UBICACION";
+                cmd.CommandText = "MOSTRAR_DESCRIPCION_UBICACION";
                 cmd.CommandType = CommandType.StoredProcedure;
 
 

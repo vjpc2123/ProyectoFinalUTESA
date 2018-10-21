@@ -208,7 +208,7 @@ namespace CapaDatos
 
 
                     SqlParameter ParBuscador = new SqlParameter();
-                    ParBuscador.ParameterName = "@nombre";
+                    ParBuscador.ParameterName = "@buscador";
                     ParBuscador.SqlDbType = SqlDbType.VarChar;
                     ParBuscador.Size = 50;
                     ParBuscador.Value = Presentacion.Buscador;
@@ -240,7 +240,7 @@ namespace CapaDatos
 
 
                     SqlParameter ParBuscador = new SqlParameter();
-                    ParBuscador.ParameterName = "@descripcion";
+                    ParBuscador.ParameterName = "@buscador";
                     ParBuscador.SqlDbType = SqlDbType.VarChar;
                     ParBuscador.Size = 150;
                     ParBuscador.Value = Presentacion.Buscador;
