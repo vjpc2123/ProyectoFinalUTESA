@@ -32,22 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.tcCategoria = new System.Windows.Forms.TabControl();
             this.tpLista = new System.Windows.Forms.TabPage();
             this.mtxtbuscar = new System.Windows.Forms.MaskedTextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.dtgvCategorias = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tpDetalle = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -55,17 +48,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ErrorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             this.tcCategoria.SuspendLayout();
             this.tpLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCategorias)).BeginInit();
             this.tpDetalle.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -90,23 +90,6 @@
             this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Categorias.";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::CapaPresentacion.Properties.Resources.Close_Window_25px1;
-            this.btnCerrar.Location = new System.Drawing.Point(720, 0);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 30);
-            this.btnCerrar.TabIndex = 12;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // tcCategoria
             // 
@@ -172,6 +155,133 @@
             this.cbBuscar.Text = "--Seleccionar--";
             this.cbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbBuscar_KeyPress);
             // 
+            // dtgvCategorias
+            // 
+            this.dtgvCategorias.AllowUserToAddRows = false;
+            this.dtgvCategorias.AllowUserToDeleteRows = false;
+            this.dtgvCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar});
+            this.dtgvCategorias.Location = new System.Drawing.Point(-4, 40);
+            this.dtgvCategorias.Name = "dtgvCategorias";
+            this.dtgvCategorias.ReadOnly = true;
+            this.dtgvCategorias.Size = new System.Drawing.Size(748, 314);
+            this.dtgvCategorias.TabIndex = 14;
+            this.dtgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellContentClick);
+            this.dtgvCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellDoubleClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 50;
+            // 
+            // tpDetalle
+            // 
+            this.tpDetalle.AutoScroll = true;
+            this.tpDetalle.Controls.Add(this.groupBox1);
+            this.tpDetalle.Location = new System.Drawing.Point(4, 24);
+            this.tpDetalle.Name = "tpDetalle";
+            this.tpDetalle.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDetalle.Size = new System.Drawing.Size(740, 399);
+            this.tpDetalle.TabIndex = 1;
+            this.tpDetalle.Text = "Detalle";
+            this.tpDetalle.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnGrabar);
+            this.groupBox1.Controls.Add(this.btnNuevo);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(734, 387);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(216, 215);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(372, 87);
+            this.txtDescripcion.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(216, 149);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(372, 24);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(216, 96);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(157, 24);
+            this.txtCodigo.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(110, 218);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 18);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Descripcion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(123, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Nombre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(123, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Codigo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mantenimiento Categoria";
+            // 
+            // ErrorIcono
+            // 
+            this.ErrorIcono.BlinkRate = 400;
+            this.ErrorIcono.ContainerControl = this;
+            this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
+            // 
             // btnImprimir
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -188,6 +298,7 @@
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnBuscar
             // 
@@ -224,58 +335,6 @@
             this.btnBorrar.Text = "Borrar Registro Seleccionado";
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // dtgvCategorias
-            // 
-            this.dtgvCategorias.AllowUserToAddRows = false;
-            this.dtgvCategorias.AllowUserToDeleteRows = false;
-            this.dtgvCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dtgvCategorias.Location = new System.Drawing.Point(-4, 40);
-            this.dtgvCategorias.Name = "dtgvCategorias";
-            this.dtgvCategorias.ReadOnly = true;
-            this.dtgvCategorias.Size = new System.Drawing.Size(748, 314);
-            this.dtgvCategorias.TabIndex = 14;
-            this.dtgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellContentClick);
-            this.dtgvCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellDoubleClick);
-            // 
-            // tpDetalle
-            // 
-            this.tpDetalle.AutoScroll = true;
-            this.tpDetalle.Controls.Add(this.groupBox1);
-            this.tpDetalle.Location = new System.Drawing.Point(4, 24);
-            this.tpDetalle.Name = "tpDetalle";
-            this.tpDetalle.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDetalle.Size = new System.Drawing.Size(740, 399);
-            this.tpDetalle.TabIndex = 1;
-            this.tpDetalle.Text = "Detalle";
-            this.tpDetalle.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnLimpiar);
-            this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.btnGrabar);
-            this.groupBox1.Controls.Add(this.btnNuevo);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(734, 387);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
             // 
             // btnLimpiar
             // 
@@ -349,68 +408,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(216, 215);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(372, 87);
-            this.txtDescripcion.TabIndex = 2;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(216, 149);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(372, 24);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(216, 96);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(157, 24);
-            this.txtCodigo.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(110, 218);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Descripcion";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(123, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nombre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(123, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Codigo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(265, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mantenimiento Categoria";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Add_Folder_65px;
@@ -421,18 +418,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Eliminar
+            // btnCerrar
             // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 50;
-            // 
-            // ErrorIcono
-            // 
-            this.ErrorIcono.BlinkRate = 400;
-            this.ErrorIcono.ContainerControl = this;
-            this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::CapaPresentacion.Properties.Resources.Close_Window_25px1;
+            this.btnCerrar.Location = new System.Drawing.Point(720, 0);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(28, 30);
+            this.btnCerrar.TabIndex = 12;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmCategoria
             // 
@@ -454,8 +455,8 @@
             this.tpDetalle.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,11 +486,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.MaskedTextBox mtxtbuscar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.ErrorProvider ErrorIcono;
+        public System.Windows.Forms.ComboBox cbBuscar;
+        public System.Windows.Forms.MaskedTextBox mtxtbuscar;
     }
 }
 

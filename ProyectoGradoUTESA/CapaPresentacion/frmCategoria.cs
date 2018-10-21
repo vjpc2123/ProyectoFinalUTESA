@@ -177,6 +177,11 @@ namespace CapaPresentacion
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Nombre_O_Descripcion();
+            if (dtgvCategorias.RowCount == 0)
+            {
+                MsgError("No se encuentran datos con las caracteristicas indicadas.");
+            }
+           
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -355,6 +360,12 @@ namespace CapaPresentacion
             limpiar();
             Habilitar(false);
             ErrorIcono.Clear();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            rptCategorias report = new rptCategorias();
+            report.ShowDialog();
         }
     }
     }
