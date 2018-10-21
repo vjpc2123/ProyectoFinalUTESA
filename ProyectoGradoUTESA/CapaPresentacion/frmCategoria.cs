@@ -19,7 +19,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
+        //Metodo Mensajes Predeterminados (Error Confirmacion)
         private void MsgConfirmacion(string Msg)
         {
             MessageBox.Show(Msg, "Sistema Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -35,7 +35,7 @@ namespace CapaPresentacion
             txtCodigo.Clear();
             txtNombre.Focus();
         }
-        private void DisDTGV()
+        private void DisDTGV()//Metodo Dis DataGridView
         {
             dtgvCategorias.BorderStyle = BorderStyle.Fixed3D;
             dtgvCategorias.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -50,7 +50,7 @@ namespace CapaPresentacion
             dtgvCategorias.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
         }
-        private void Habilitar(bool stado)
+        private void Habilitar(bool stado)//Habilitar o deshabilitar Txt
         {
             txtNombre.ReadOnly = !stado;
             txtDescripcion.ReadOnly = !stado;
@@ -343,10 +343,7 @@ namespace CapaPresentacion
                 }
                 
             } 
-
-
-               
-
+            
             }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

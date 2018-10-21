@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmMarca
+    partial class frmPresentacion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPresentacion));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.tcMarcas = new System.Windows.Forms.TabControl();
+            this.tcProyecto = new System.Windows.Forms.TabControl();
             this.tpLista = new System.Windows.Forms.TabPage();
             this.SelectAll = new System.Windows.Forms.CheckBox();
             this.mtxtbuscar = new System.Windows.Forms.MaskedTextBox();
@@ -42,7 +42,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.dtgvMarcas = new System.Windows.Forms.DataGridView();
+            this.dtgvListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tpDetalle = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,9 +60,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ErrorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader.SuspendLayout();
-            this.tcMarcas.SuspendLayout();
+            this.tcProyecto.SuspendLayout();
             this.tpLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMarcas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListado)).BeginInit();
             this.tpDetalle.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,6 +79,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(748, 30);
             this.panelHeader.TabIndex = 2;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
             // label1
@@ -87,9 +88,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Marcas.";
+            this.label1.Text = "Presentacion.";
             // 
             // btnCerrar
             // 
@@ -108,17 +109,17 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // tcMarcas
+            // tcProyecto
             // 
-            this.tcMarcas.Controls.Add(this.tpLista);
-            this.tcMarcas.Controls.Add(this.tpDetalle);
-            this.tcMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcMarcas.Location = new System.Drawing.Point(0, 30);
-            this.tcMarcas.Name = "tcMarcas";
-            this.tcMarcas.SelectedIndex = 0;
-            this.tcMarcas.Size = new System.Drawing.Size(748, 427);
-            this.tcMarcas.TabIndex = 3;
+            this.tcProyecto.Controls.Add(this.tpLista);
+            this.tcProyecto.Controls.Add(this.tpDetalle);
+            this.tcProyecto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcProyecto.Location = new System.Drawing.Point(0, 30);
+            this.tcProyecto.Name = "tcProyecto";
+            this.tcProyecto.SelectedIndex = 0;
+            this.tcProyecto.Size = new System.Drawing.Size(748, 427);
+            this.tcProyecto.TabIndex = 3;
             // 
             // tpLista
             // 
@@ -129,7 +130,7 @@
             this.tpLista.Controls.Add(this.btnImprimir);
             this.tpLista.Controls.Add(this.btnBuscar);
             this.tpLista.Controls.Add(this.btnBorrar);
-            this.tpLista.Controls.Add(this.dtgvMarcas);
+            this.tpLista.Controls.Add(this.dtgvListado);
             this.tpLista.Location = new System.Drawing.Point(4, 24);
             this.tpLista.Name = "tpLista";
             this.tpLista.Padding = new System.Windows.Forms.Padding(3);
@@ -145,7 +146,7 @@
             this.SelectAll.Location = new System.Drawing.Point(56, 44);
             this.SelectAll.Name = "SelectAll";
             this.SelectAll.Size = new System.Drawing.Size(15, 14);
-            this.SelectAll.TabIndex = 17;
+            this.SelectAll.TabIndex = 18;
             this.SelectAll.UseVisualStyleBackColor = false;
             this.SelectAll.CheckedChanged += new System.EventHandler(this.SelectAll_CheckedChanged);
             // 
@@ -237,23 +238,23 @@
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // dtgvMarcas
+            // dtgvListado
             // 
-            this.dtgvMarcas.AllowUserToAddRows = false;
-            this.dtgvMarcas.AllowUserToDeleteRows = false;
-            this.dtgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgvListado.AllowUserToAddRows = false;
+            this.dtgvListado.AllowUserToDeleteRows = false;
+            this.dtgvListado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dtgvMarcas.Location = new System.Drawing.Point(-4, 40);
-            this.dtgvMarcas.Name = "dtgvMarcas";
-            this.dtgvMarcas.ReadOnly = true;
-            this.dtgvMarcas.Size = new System.Drawing.Size(748, 314);
-            this.dtgvMarcas.TabIndex = 14;
-            this.dtgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellContentClick);
-            this.dtgvMarcas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCategorias_CellDoubleClick);
+            this.dtgvListado.Location = new System.Drawing.Point(-4, 40);
+            this.dtgvListado.Name = "dtgvListado";
+            this.dtgvListado.ReadOnly = true;
+            this.dtgvListado.Size = new System.Drawing.Size(748, 314);
+            this.dtgvListado.TabIndex = 14;
+            this.dtgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellContentClick);
+            this.dtgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellDoubleClick);
             // 
             // Eliminar
             // 
@@ -269,7 +270,7 @@
             this.tpDetalle.Location = new System.Drawing.Point(4, 24);
             this.tpDetalle.Name = "tpDetalle";
             this.tpDetalle.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDetalle.Size = new System.Drawing.Size(740, 399);
+            this.tpDetalle.Size = new System.Drawing.Size(792, 392);
             this.tpDetalle.TabIndex = 1;
             this.tpDetalle.Text = "Detalle";
             this.tpDetalle.UseVisualStyleBackColor = true;
@@ -424,11 +425,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(279, 16);
+            this.label2.Location = new System.Drawing.Point(265, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 16);
+            this.label2.Size = new System.Drawing.Size(203, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Mantenimiento Marcas";
+            this.label2.Text = "Mantenimiento Presentacion";
             // 
             // pictureBox1
             // 
@@ -446,23 +447,23 @@
             this.ErrorIcono.ContainerControl = this;
             this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
             // 
-            // frmMarca
+            // frmPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 457);
-            this.Controls.Add(this.tcMarcas);
+            this.Controls.Add(this.tcProyecto);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMarca";
-            this.Text = "frmMarca";
-            this.Load += new System.EventHandler(this.frmMarca_Load);
+            this.Name = "frmPresentacion";
+            this.Text = "frmPresentacion";
+            this.Load += new System.EventHandler(this.frmPresentacion_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            this.tcMarcas.ResumeLayout(false);
+            this.tcProyecto.ResumeLayout(false);
             this.tpLista.ResumeLayout(false);
             this.tpLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListado)).EndInit();
             this.tpDetalle.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -477,15 +478,16 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TabControl tcMarcas;
+        private System.Windows.Forms.TabControl tcProyecto;
         private System.Windows.Forms.TabPage tpLista;
+        private System.Windows.Forms.CheckBox SelectAll;
         public System.Windows.Forms.MaskedTextBox mtxtbuscar;
         private System.Windows.Forms.Label lblTotal;
         public System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.DataGridView dtgvMarcas;
+        private System.Windows.Forms.DataGridView dtgvListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TabPage tpDetalle;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -502,6 +504,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider ErrorIcono;
-        private System.Windows.Forms.CheckBox SelectAll;
     }
 }

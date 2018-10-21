@@ -77,6 +77,12 @@
     <Compile Include="frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresentacion.Designer.cs">
+      <DependentUpon>frmPresentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportes\rptCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +105,21 @@
     <Compile Include="FrmReportes\rptMarcas.Designer.cs">
       <DependentUpon>rptMarcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportes\rptPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes\rptPresentacion.Designer.cs">
+      <DependentUpon>rptPresentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresentacion.resx">
+      <DependentUpon>frmPresentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportes\rptCategorias.resx">
       <DependentUpon>rptCategorias.cs</DependentUpon>
@@ -119,10 +134,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rptPresentacion.rdlc" />
     <EmbeddedResource Include="Reportes\rptMarca.rdlc" />
     <EmbeddedResource Include="Reportes\rptCategorias.rdlc" />
     <EmbeddedResource Include="FrmReportes\rptMarcas.resx">
       <DependentUpon>rptMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportes\rptPresentacion.resx">
+      <DependentUpon>rptPresentacion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

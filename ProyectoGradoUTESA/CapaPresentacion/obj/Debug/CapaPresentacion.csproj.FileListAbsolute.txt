@@ -110,3 +110,5 @@ C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\De
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.rptCategorias.resources
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmMarca.resources
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.rptMarcas.resources
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPresentacion.resources
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.rptPresentacion.resources

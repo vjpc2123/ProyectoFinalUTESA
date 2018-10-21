@@ -9,29 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
-
 namespace CapaPresentacion
 {
-    public partial class frmMarca : Form
+    public partial class frmPresentacion : Form
     {
-
         private bool N = false;
         private bool E = false;
-        
 
-        public frmMarca()
-        {
-            InitializeComponent();
-        }
-
-        private void MsgConfirmacion(string Msg)
-        {
-            MessageBox.Show(Msg, "Sistema Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void MsgError(string Msg)
-        {
-            MessageBox.Show(Msg, "Sistema Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
         private void limpiar()
         {
             txtNombre.Clear();
@@ -41,17 +25,17 @@ namespace CapaPresentacion
         }
         private void DisDTGV()
         {
-            dtgvMarcas.BorderStyle = BorderStyle.Fixed3D;
-            dtgvMarcas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtgvMarcas.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
-            dtgvMarcas.DefaultCellStyle.SelectionBackColor = Color.FromArgb(147, 177, 215);
-            dtgvMarcas.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dtgvMarcas.BackgroundColor = Color.FromArgb(171, 171, 171);
+            dtgvListado.BorderStyle = BorderStyle.Fixed3D;
+            dtgvListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtgvListado.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dtgvListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(147, 177, 215);
+            dtgvListado.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtgvListado.BackgroundColor = Color.FromArgb(171, 171, 171);
 
-            dtgvMarcas.EnableHeadersVisualStyles = false;
-            dtgvMarcas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dtgvMarcas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(28, 28, 28);
-            dtgvMarcas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dtgvListado.EnableHeadersVisualStyles = false;
+            dtgvListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dtgvListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(28, 28, 28);
+            dtgvListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
         }
         private void Habilitar(bool stado)
@@ -84,10 +68,10 @@ namespace CapaPresentacion
         {
             try
             {
-                dtgvMarcas.DataSource = NMarca.MostrarMarca();
-                dtgvMarcas.Columns[3].Width = 300;
-                dtgvMarcas.Columns[2].Width = 250;
-                lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvMarcas.RowCount);
+                dtgvListado.DataSource = NPresentacion.Mostrar();
+                dtgvListado.Columns[3].Width = 300;
+                dtgvListado.Columns[2].Width = 250;
+                lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
             }
             catch (Exception ex)
             {
@@ -95,22 +79,21 @@ namespace CapaPresentacion
                 MsgError(ex.ToString());
             }
         }
-
         private void BuscarNombre()
         {
 
-            dtgvMarcas.DataSource = NMarca.Buscar_Nombre_Marca(mtxtbuscar.Text);
-            dtgvMarcas.Columns[3].Width = 300;
-            dtgvMarcas.Columns[2].Width = 250;
-            lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvMarcas.RowCount);
+            dtgvListado.DataSource = NPresentacion.Buscar_Nombre(mtxtbuscar.Text);
+            dtgvListado.Columns[3].Width = 300;
+            dtgvListado.Columns[2].Width = 250;
+            lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
         private void BuscarDescripcion()
         {
 
-            dtgvMarcas.DataSource = NMarca.Buscar_Descripcion_Marca(mtxtbuscar.Text);
-            dtgvMarcas.Columns[3].Width = 300;
-            dtgvMarcas.Columns[2].Width = 250;
-            lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvMarcas.RowCount);
+            dtgvListado.DataSource = NPresentacion.Buscar_Descripcion(mtxtbuscar.Text);
+            dtgvListado.Columns[3].Width = 300;
+            dtgvListado.Columns[2].Width = 250;
+            lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
         private void Nombre_O_Descripcion()
         {
@@ -122,10 +105,7 @@ namespace CapaPresentacion
             {
                 BuscarDescripcion();
             }
-            else
-            {
-                MsgError("Debe Seleccionar Una forma de Busqueda");
-            }
+
         }
 
         public const int WM_BUTTON = 0xA1;
@@ -136,23 +116,26 @@ namespace CapaPresentacion
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-        private void btnBuscar_Click(object sender, EventArgs e)
+
+        public frmPresentacion()
         {
-            if (cbBuscar.Text != "--Seleccionar--")
-            {
-                Nombre_O_Descripcion();
-            }
-            else
-            {
-                MsgError("Debe Seleccionar Una forma de Busqueda");
-            }
-            if (dtgvMarcas.RowCount == 0)
-            {
-                MsgError("No se encuentran datos con las caracteristicas indicadas.");
-            }
+            InitializeComponent();
+        }
+        private void MsgConfirmacion(string Msg)
+        {
+            MessageBox.Show(Msg, "Sistema Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void MsgError(string Msg)
+        {
+            MessageBox.Show(Msg, "Sistema Facturacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void frmMarca_Load(object sender, EventArgs e)
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmPresentacion_Load(object sender, EventArgs e)
         {
             DisDTGV();
             txtCodigo.ReadOnly = true;
@@ -168,6 +151,7 @@ namespace CapaPresentacion
 
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
         {
+
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
@@ -178,6 +162,24 @@ namespace CapaPresentacion
         private void cbBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            if (cbBuscar.Text != "--Seleccionar--")
+            {
+                Nombre_O_Descripcion();
+            }
+            else
+            {
+                MsgError("Debe Seleccionar Una forma de Busqueda");
+            }
+
+            if (dtgvListado.RowCount == 0)
+            {
+                MsgError("No se encuentran datos con las caracteristicas indicadas.");
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -192,6 +194,7 @@ namespace CapaPresentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 ErrorIcono.Clear();
@@ -213,11 +216,11 @@ namespace CapaPresentacion
                 {
                     if (N == true)
                     {
-                        msgRespuesta = NMarca.IngresarMarca(txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
+                        msgRespuesta = NPresentacion.IngresarPresentacion(txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
                     }
                     else
                     {
-                        msgRespuesta = NMarca.ModificarMarca(Convert.ToInt32(txtCodigo.Text), txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
+                        msgRespuesta = NPresentacion.ModificarPresentacion(Convert.ToInt32(txtCodigo.Text), txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
                     }
                     if (msgRespuesta.Equals("Ok"))
                     {
@@ -248,42 +251,9 @@ namespace CapaPresentacion
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (txtCodigo.Text.Equals(""))
-            {
-                MsgError("Debe Seleccionar que registro va a editar");
-            }
-            else
-            {
-                E = true;
-                HoB_btn();
-                Habilitar(true);
-            }
-        }
-
-        private void dtgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvMarcas.Rows[e.RowIndex].Cells["Eliminar"];
-            chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
-        }
-
-        private void dtgvCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            N = false;
-            E = false;
-            HoB_btn();
-            limpiar();
-            Habilitar(false);
-            txtCodigo.Text = Convert.ToString(dtgvMarcas.CurrentRow.Cells["Codigo"].Value);
-            txtNombre.Text = Convert.ToString(dtgvMarcas.CurrentRow.Cells["Nombre"].Value);
-            txtDescripcion.Text = Convert.ToString(dtgvMarcas.CurrentRow.Cells["Descripcion"].Value);
-            tcMarcas.SelectedIndex = 1;
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            int comparar = dtgvMarcas.RowCount;
+            int comparar = dtgvListado.RowCount;
             DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (Result == DialogResult.Yes)
             {
@@ -297,27 +267,19 @@ namespace CapaPresentacion
                 {
                     string Codigo;
                     string Respuesta = "";
-                    foreach (DataGridViewRow row in dtgvMarcas.Rows)
+                    foreach (DataGridViewRow row in dtgvListado.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             Codigo = Convert.ToString(row.Cells[1].Value);
-                            Respuesta = NMarca.EliminarMarca(Convert.ToInt32(Codigo));
-
-                            if (Respuesta.Equals("Ok"))
-                            {
-
-                                MostrarDatos();
-                            }
-                            else
-                            {
-                                MsgError(Respuesta);
-
-                            }
+                            Respuesta = NPresentacion.Eliminar(Convert.ToInt32(Codigo));
+                            if (Respuesta != ("Ok"))
+                            { MsgError(Respuesta); }
                         }
 
                     }
-                    if (comparar != dtgvMarcas.RowCount)
+                    MostrarDatos();
+                    if (comparar != dtgvListado.RowCount)
                     {
                         MsgConfirmacion("Se han eliminado los datos correctamente");
                         mtxtbuscar.Text = "";
@@ -343,6 +305,58 @@ namespace CapaPresentacion
                 }
 
             }
+
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Equals(""))
+            {
+                MsgError("Debe Seleccionar que registro va a editar");
+            }
+            else
+            {
+                E = true;
+                HoB_btn();
+                Habilitar(true);
+            }
+        }
+
+        private void dtgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvListado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+            catch (Exception)
+            {
+
+               
+            }  
+        }
+
+        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                N = false;
+                E = false;
+                HoB_btn();
+                limpiar();
+                Habilitar(false);
+                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
+                txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
+                txtDescripcion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Descripcion"].Value);
+                tcProyecto.SelectedIndex = 1;
+            }
+            catch (Exception)
+            {
+
+                
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -355,28 +369,29 @@ namespace CapaPresentacion
             ErrorIcono.Clear();
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            rptMarcas marcas = new rptMarcas();
-            marcas.ShowDialog();
-        }
-
         private void SelectAll_CheckedChanged(object sender, EventArgs e)
         {
+
             if (SelectAll.Checked == true)
             {
-                for (int i = 0; i <= dtgvMarcas.Rows.Count - 1; i++)
+                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
                 {
-                    dtgvMarcas.Rows[i].Cells[0].Value = true;
+                    dtgvListado.Rows[i].Cells[0].Value = true;
                 }
             }
             else
             {
-                for (int i = 0; i <= dtgvMarcas.Rows.Count - 1; i++)
+                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
                 {
-                    dtgvMarcas.Rows[i].Cells[0].Value = false;
+                    dtgvListado .Rows[i].Cells[0].Value = false;
                 }
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            rptPresentacion reporte = new rptPresentacion();
+            reporte.ShowDialog();
         }
     }
 }
