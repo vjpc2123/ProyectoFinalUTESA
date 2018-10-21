@@ -283,6 +283,7 @@ namespace CapaPresentacion
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            int comparar = dtgvCategorias.RowCount;
             DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (Result == DialogResult.Yes)
             {
@@ -316,8 +317,15 @@ namespace CapaPresentacion
                         }
 
                     }
-                    MsgConfirmacion("Se han eliminado los datos correctamente");
-                    mtxtbuscar.Text = "";
+                    if (comparar != dtgvCategorias.RowCount)
+                    {
+                        MsgConfirmacion("Se han eliminado los datos correctamente");
+                        mtxtbuscar.Text = "";
+                    }
+                    else { MsgError("Debe seleccionar los campos que desea eliminar");
+                        mtxtbuscar.Text = "";
+                    }
+                   
                     MostrarDatos();
 
                     {
