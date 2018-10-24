@@ -11,81 +11,95 @@ namespace CapaNegocios
     {
        
            
-            public static string Insertar(string nombre, string sipnosis, int id_generoliterario, int id_editorial, int id_autor, int id_estanteria, byte[] Imagen)
+            public static string Insertar(string nombre, string descripcion, int idcategoria, int idpresentacion, int idubicacion, int idmarca, byte[] Imagen)
             {
 
                 DArticulo obj = new DArticulo();
-                obj. = nombre;
-                obj.Sipnosis = sipnosis;
-                obj.Id_GeneroLiterario = id_generoliterario;
-                obj.Id_Editorial = id_editorial;
-                obj.Id_Estanteria = id_estanteria;
-                obj.Id_Autor = id_autor;
+                obj.Nombre = nombre;
+                obj.Descripcion = descripcion;
+                obj.IdCategoria = idcategoria;
+                obj.IdPresentacion = idpresentacion;
+                obj.idUbicacion = idubicacion;
+                obj.IdMarca = idmarca;
                 obj.Imagen = Imagen;
-                return obj.Insertar(objLibro);
+                return obj.InsertarArticulo(obj);
 
 
             }
 
-            public static string Editar(int id_libro, string nombre, string sipnosis, int id_generoliterario, int id_editorial, int id_autor, int id_estanteria, byte[] Imagen)
+            public static string Editar(int idarticulo, string nombre, string descripcion, int idcategoria, int idpresentacion, int idubicacion, int idmarca, byte[] Imagen)
             {
 
-                DLibro objLibro = new DLibro();
-                objLibro.Id_Libro = id_libro;
-                objLibro.Nombre = nombre;
-                objLibro.Sipnosis = sipnosis;
-                objLibro.Id_GeneroLiterario = id_generoliterario;
-                objLibro.Id_Editorial = id_editorial;
-                objLibro.Id_Estanteria = id_estanteria;
-                objLibro.Id_Autor = id_autor;
-                objLibro.Imagen = Imagen;
-                return objLibro.Editar(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.IdArticulo = idarticulo;
+                obj.Nombre = nombre;
+                obj.Descripcion = descripcion;
+                obj.IdCategoria = idcategoria;
+                obj.IdPresentacion = idpresentacion;
+                obj.idUbicacion = idubicacion;
+                obj.IdMarca = idmarca;
+                obj.Imagen = Imagen;
+                return obj.Editar(obj);
 
             }
-            public static string Eliminar(int id_libro)
+            public static string Eliminar(int idarticulo)
             {
 
-                DLibro objLibro = new DLibro();
-                objLibro.Id_Libro = id_libro;
-                return objLibro.Eliminar(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.idUbicacion = idarticulo;
+                return obj.EliminarArticulo(obj);
 
 
             }
 
             public static DataTable MostarLibros()
             {
-                DLibro obj = new DLibro();
-                return obj.MostrarLibro();
+                DArticulo obj = new DArticulo();
+                return obj.MostrarTodosArticulos();
             }
 
-            public static DataTable BuscarNombreLibro(string buscador)
+            public static DataTable BuscarCodigoArticulo(string buscador)
             {
-                DLibro objLibro = new DLibro();
-                objLibro.Buscador = buscador;
-                return objLibro.BuscarNombre_Libro(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.Buscador = buscador;
+                return obj.MostrarArticulo_Codigo(obj);
             }
-
-            public static DataTable BuscarAutorLibro(string buscador)
+            
+            public static DataTable BuscarNombreArticulo(string buscador)
             {
-                DLibro objLibro = new DLibro();
-                objLibro.Buscador = buscador;
-                return objLibro.Buscar_Autor_Libro(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.Buscador = buscador;
+                return obj.MostrarArticulo_Nombre(obj);
             }
 
-            public static DataTable BuscarGeneroLibro(string buscador)
+            public static DataTable BuscarCategoriaArticulo(string buscador)
             {
-                DLibro objLibro = new DLibro();
-                objLibro.Buscador = buscador;
-                return objLibro.Buscar_Genero_Libro(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.Buscador = buscador;
+                return obj.MostrarArticulo_Categoria(obj);
             }
 
-            public static DataTable BuscarEditorialLibro(string buscador)
+            public static DataTable BuscarPresentacionArticulo(string buscador)
             {
-                DLibro objLibro = new DLibro();
-                objLibro.Buscador = buscador;
-                return objLibro.Buscar_Editorial_Libro(objLibro);
+                DArticulo obj = new DArticulo();
+                obj.Buscador = buscador;
+                return obj.MostrarArticulo_Presentacion(obj);
             }
 
-        }
+            public static DataTable BuscarMarcaArticulo(string buscador)
+            {
+                DArticulo obj = new DArticulo();
+                obj.Buscador = buscador;
+                return obj.MostrarArticulo_Marca(obj);
+            }
+
+            public static DataTable BuscarUbicacionMarca(string buscador)
+            {
+            DArticulo obj = new DArticulo();
+            obj.Buscador = buscador;
+            return obj.MostrarArticulo_Ubicacion(obj);
+            }
+
+    }
     }
 
