@@ -120,7 +120,7 @@ namespace CapaDatos
 
                 SqlParameter parIdMarca = new SqlParameter();
                 parIdMarca.ParameterName = "@idmarca";
-                parIdMarca.SqlDbType = SqlDbType.Image;
+                parIdMarca.SqlDbType = SqlDbType.Int;
                 parIdMarca.Value = Articulo.IdMarca;
                 cmd.Parameters.Add(parIdMarca);
 

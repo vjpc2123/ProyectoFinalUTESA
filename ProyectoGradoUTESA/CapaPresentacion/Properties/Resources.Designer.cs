@@ -93,6 +93,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Camera_Identificatioan_40px {
+            get {
+                object obj = ResourceManager.GetObject("Camera Identificatioan_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Camera_Identification_40px {
+            get {
+                object obj = ResourceManager.GetObject("Camera Identification_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_Subscription_25px {
             get {
                 object obj = ResourceManager.GetObject("Cancel Subscription_25px", resourceCulture);
@@ -143,9 +163,29 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gallery_100px {
+            get {
+                object obj = ResourceManager.GetObject("Gallery_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Maintenance_65px {
             get {
                 object obj = ResourceManager.GetObject("Maintenance_65px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap No_Camera_40px {
+            get {
+                object obj = ResourceManager.GetObject("No Camera_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +206,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap Search_25px {
             get {
                 object obj = ResourceManager.GetObject("Search_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search2_25px {
+            get {
+                object obj = ResourceManager.GetObject("Search2_25px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

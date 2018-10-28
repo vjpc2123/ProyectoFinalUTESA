@@ -118,40 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Cancel Subscription_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancel Subscription_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="File_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\File_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Add Folder_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add Folder_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit Property_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit Property_25px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Trash_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Trash_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Print_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Print_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close Window_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close Window_25px11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Gallery_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gallery_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Folder_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Folder_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add Folder_65px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add Folder_65px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Add Property_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add Property_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Add Folder_65px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add Folder_65px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Maintenance_65px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Maintenance_65px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="No Camera_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\No Camera_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit Property_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit Property_25px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Print_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel Subscription_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel Subscription_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camera Identificatioan_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camera Identificatioan_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close Window_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close Window_25px11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camera Identification_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camera Identification_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search2_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search2_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
