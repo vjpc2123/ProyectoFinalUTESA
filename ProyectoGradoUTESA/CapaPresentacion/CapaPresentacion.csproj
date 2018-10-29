@@ -83,6 +83,12 @@
     <Compile Include="frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPresentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPresentacion.resx">
       <DependentUpon>frmPresentacion.cs</DependentUpon>
@@ -278,6 +287,26 @@
     <None Include="Resources\No Camera_40px.png" />
     <None Include="Resources\Gallery_100px.png" />
     <None Include="Resources\Search2_25px.png" />
+    <None Include="Resources\Minimize Window_25px.png" />
+    <None Include="Resources\Maximize Window_25px.png" />
+    <None Include="Resources\Close Window_25px.png" />
+    <None Include="Resources\C Sharp Logo_25px.png" />
+    <None Include="Resources\Restore Window_25px.png" />
+    <None Include="Resources\Menu_30px.png" />
+    <None Include="Resources\Shutdown_27px.png" />
+    <None Include="Resources\Product_25px.png" />
+    <None Include="Resources\Product_30px.png" />
+    <None Include="Resources\Sell_30px.png" />
+    <None Include="Resources\Client Management_30px.png" />
+    <None Include="Resources\Deliver Food_30px.png" />
+    <None Include="Resources\Buy_30px.png" />
+    <None Include="Resources\Maintenance_30px.png" />
+    <None Include="Resources\Sorting_100px.png" />
+    <None Include="Resources\Bag Brand_96px.png" />
+    <None Include="Resources\Location_96px.png" />
+    <None Include="Resources\Product_96px.png" />
+    <None Include="Resources\Combo Chart_100px.png" />
+    <None Include="Resources\Table Properties_100px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

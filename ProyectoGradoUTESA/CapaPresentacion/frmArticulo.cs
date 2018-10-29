@@ -98,6 +98,8 @@ namespace CapaPresentacion
                 btnMarca.Enabled = true;
                 btnPresentacion.Enabled = true;
                 btnUbicacion.Enabled = true;
+                btnAddFoto.Enabled = true;
+                btnRemoveFoto.Enabled = true;
 
             }
             else
@@ -111,6 +113,8 @@ namespace CapaPresentacion
                 btnMarca.Enabled = false;
                 btnPresentacion.Enabled = false;
                 btnUbicacion.Enabled = false;
+                btnAddFoto.Enabled = false;
+                btnRemoveFoto.Enabled = false;
             }
         }
 
@@ -517,12 +521,12 @@ namespace CapaPresentacion
 
         private void frmArticulo_FormClosed(object sender, FormClosedEventArgs e)
         {
-          //  _instancia =  new frmArticulo();
+            _instancia =  new frmArticulo();
         }
 
         private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //_instancia = null;
+            _instancia = null;
         }
 
         private void btnPresentacion_Click(object sender, EventArgs e)
