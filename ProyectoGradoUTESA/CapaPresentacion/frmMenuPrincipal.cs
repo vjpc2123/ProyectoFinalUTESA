@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            limpiarformulario();
         }
 
         private void btnMaximixar_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace CapaPresentacion
             if (panelMenuBAR.Width == 40)
             {
                 panelMenuBAR.Width = 185;
-                btnArticulo.Text = "Articulo";
+                btnMercancia.Text = "Articulo";
                 btnVender.Text = "Ventas";
                 btnCliente.Text = "Cliente";
                 btnSuplidor.Text = "Suplidor";
@@ -68,7 +68,7 @@ namespace CapaPresentacion
             {
 
                 panelMenuBAR.Width = 40;
-                btnArticulo.Text = "";
+                btnMercancia.Text = "";
                 btnVender.Text = "";
                 btnCliente.Text = "";
                 btnSuplidor.Text = "";
@@ -84,9 +84,9 @@ namespace CapaPresentacion
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            panelSeccionArticulos.Visible = true;
-            
-           
+
+            panelSeccionProyecto.Visible = true;
+            panelSeccionProyecto.BringToFront();
             
         }
 
@@ -95,32 +95,34 @@ namespace CapaPresentacion
 
         }
 
-        public void ExecuteFormIntoPanel(object FormSon)
+        
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-            try
+            Form formulario;
+            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
+            if (formulario == null) 
             {
-                if (this.panelFormularios.Controls.Count > 0)
-                    this.panelFormularios.Controls.RemoveAt(0);
-                Form fh = FormSon as Form;
-                fh.TopLevel = false;
-                fh.FormBorderStyle = FormBorderStyle.None;
-                fh.Dock = DockStyle.Fill;
-                this.panelFormularios.Controls.Add(fh);
-                this.panelFormularios.Tag = fh;
-                fh.Show();
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                panelFormularios.Controls.Add(formulario);
+                formulario.Show();
+                formulario.BringToFront();
             }
-            catch (Exception)
+            else
             {
+                BringToFront();
+            }
 
-                
-            }
-            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             
            
+        }
+
+        private void limpiarformulario()
+        {
+            panelSeccionProyecto.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -131,14 +133,86 @@ namespace CapaPresentacion
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            panelSeccionArticulos.Visible = false;
+            
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
 
+            
+        }
+
+        private void btnArticulo_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        private void btnArticulo_MouseLeave(object sender, EventArgs e)
+        {
+        }
+
+        private void panelSeccionProyecto_MouseLeave_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelSeccionProyecto_MouseHover_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+         
+            limpiarformulario();
+        }
+
+        private void panelMenuBAR_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMenuBAR_Click(object sender, EventArgs e)
+        {
+            limpiarformulario();
+        }
+
+        private void btnArticulos_MouseClick(object sender, MouseEventArgs e)
+        {
             frmArticulo frm = frmArticulo.getinstancia();
-            ExecuteFormIntoPanel(frm);
+            
+            frm.TopLevel = false;
+            panelFormularios.Controls.Add(frm);
+            frm.Show();
+            frm.BringToFront();
+
+
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+            AbrirFormulario<frmCategoria>();
+        }
+
+        private void btnMarca_MouseClick(object sender, MouseEventArgs e)
+        {
+            AbrirFormulario<frmMarca>();
+        }
+
+        private void btnPresentacion_MouseClick(object sender, MouseEventArgs e)
+        {
+            AbrirFormulario<frmPresentacion>();
+        }
+
+        private void btnUbicacion_MouseClick(object sender, MouseEventArgs e)
+        {
+            AbrirFormulario<frmUbicacion>();
         }
     }
 }

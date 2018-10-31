@@ -307,6 +307,11 @@
     <None Include="Resources\Product_96px.png" />
     <None Include="Resources\Combo Chart_100px.png" />
     <None Include="Resources\Table Properties_100px.png" />
+    <None Include="Resources\Bag Brand_30px.png" />
+    <None Include="Resources\Sorting_30px.png" />
+    <None Include="Resources\Table Properties_30px.png" />
+    <None Include="Resources\Location_30px.png" />
+    <None Include="Resources\Handle With Care_25px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

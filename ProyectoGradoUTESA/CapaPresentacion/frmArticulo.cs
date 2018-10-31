@@ -526,7 +526,7 @@ namespace CapaPresentacion
 
         private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _instancia = null;
+           _instancia = null;
         }
 
         private void btnPresentacion_Click(object sender, EventArgs e)

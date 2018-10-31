@@ -93,6 +93,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bag_Brand_30px {
+            get {
+                object obj = ResourceManager.GetObject("Bag Brand_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bag_Brand_96px {
             get {
                 object obj = ResourceManager.GetObject("Bag Brand_96px", resourceCulture);
@@ -243,6 +253,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Handle_With_Care_25px {
+            get {
+                object obj = ResourceManager.GetObject("Handle With Care_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Location_30px {
+            get {
+                object obj = ResourceManager.GetObject("Location_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Location_96px {
             get {
                 object obj = ResourceManager.GetObject("Location_96px", resourceCulture);
@@ -343,6 +373,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Product_30px1 {
+            get {
+                object obj = ResourceManager.GetObject("Product_30px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Product_96px {
             get {
                 object obj = ResourceManager.GetObject("Product_96px", resourceCulture);
@@ -413,9 +453,29 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sorting_30px {
+            get {
+                object obj = ResourceManager.GetObject("Sorting_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Table_Properties_100px {
             get {
                 object obj = ResourceManager.GetObject("Table Properties_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table_Properties_30px {
+            get {
+                object obj = ResourceManager.GetObject("Table Properties_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
