@@ -18,7 +18,7 @@ CorreoElectronico varchar (150)
 
 create procedure INSERTAR_CLIENTE(
 @idcliente int output,
-@estatus bit,
+@estatus varchar(10),
 @tipocliente varchar(10),
 @nombre varchar(50),
 @apellido varchar (50),
@@ -39,8 +39,8 @@ go
 
 create procedure MODIFICAR_CLIENTE
 (
-@idcliente int output,
-@estatus bit,
+@idcliente int,
+@estatus varchar(10),
 @tipocliente varchar(10),
 @nombre varchar(50),
 @apellido varchar (50),
@@ -53,4 +53,33 @@ create procedure MODIFICAR_CLIENTE
 @tipoidentificacion varchar (20),
 @identificacion varchar(20),
 @correoelectronico varchar (150)
-)
+)as 
+UPDATE Cliente set Estatus = @estatus,TipoCliente = @tipocliente, Nombre = @nombre, Apellido = @apellido,Telefono = @telefono, Direccion = @direccion,
+Ciudad = @ciudad,Sector = @sector, Contacto = @contacto, TelefonoContacto = @telefonocontacto, tipoIdentificacion = @tipoidentificacion, Identificacion	= @identificacion,CorreoElectronico = @correoelectronico
+where idCliente like @idcliente + '%'
+go
+
+create proc ELIMINAR_CLIENTE
+@idcliente int 
+as delete from Cliente 
+where @idcliente = idCliente
+go
+
+alter procedure MOSTRAR_TODOS_CLIENTE
+as
+select * from Cliente
+go
+
+alter procedure MOSTRAR_NOMBRE_CLIENTE
+@buscador varchar (50)
+as
+select * from Cliente
+where @buscador like Nombre +'%'
+go 
+
+create procedure MOSTRAR_IDENTIFICIACION_CLIENTE
+@buscador varchar (50)
+as
+select * from Cliente
+where @buscador like Identificacion + '%'
+go
