@@ -1,7 +1,7 @@
 create table Cliente
 (
 idCliente int primary key identity (1,1),
-Estatus bit,
+Estatus VARCHAR(10),
 TipoCliente varchar(10),
 Nombre varchar(50),
 Apellido varchar (50),
@@ -14,7 +14,8 @@ TelefonoContacto varchar (20),
 tipoIdentificacion varchar (20),
 Identificacion varchar(20),
 CorreoElectronico varchar (150)
-)go
+)
+go
 
 create procedure INSERTAR_CLIENTE(
 @idcliente int output,
@@ -37,7 +38,7 @@ insert into Cliente values (@estatus,@tipocliente,@nombre,@apellido,
 @telefono,@direccion,@ciudad,@sector,@contacto,@telefonocontacto,@tipoidentificacion,@identificacion,@correoelectronico)
 go
 
-create procedure MODIFICAR_CLIENTE
+alter procedure MODIFICAR_CLIENTE
 (
 @idcliente int,
 @estatus varchar(10),
@@ -56,7 +57,7 @@ create procedure MODIFICAR_CLIENTE
 )as 
 UPDATE Cliente set Estatus = @estatus,TipoCliente = @tipocliente, Nombre = @nombre, Apellido = @apellido,Telefono = @telefono, Direccion = @direccion,
 Ciudad = @ciudad,Sector = @sector, Contacto = @contacto, TelefonoContacto = @telefonocontacto, tipoIdentificacion = @tipoidentificacion, Identificacion	= @identificacion,CorreoElectronico = @correoelectronico
-where idCliente like @idcliente + '%'
+where idCliente = @idcliente 
 go
 
 create proc ELIMINAR_CLIENTE
