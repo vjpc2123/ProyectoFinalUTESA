@@ -456,6 +456,14 @@ namespace CapaPresentacion
                 txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
                 txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
                 txtDescripcion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Descripcion"].Value);
+                txtCategoria.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Categoria"].Value);
+                txtPresentacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Presentacion"].Value);
+                txtUbicacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Ubicacion"].Value);
+                txtMarca.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Marca"].Value);
+                byte[] imagenbuffer = (byte[])dtgvListado.CurrentRow.Cells["Imagen"].Value;
+                System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenbuffer);
+                this.pbImagen.Image = Image.FromStream(ms);
+                pbImagen.SizeMode = PictureBoxSizeMode.CenterImage;
                 tcProyecto.SelectedIndex = 1;
             }
             catch (Exception)

@@ -44,6 +44,7 @@
     <Compile Include="NCategorias.cs" />
     <Compile Include="NMarca.cs" />
     <Compile Include="NPresentacion.cs" />
+    <Compile Include="NSuplidor.cs" />
     <Compile Include="NUbicacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

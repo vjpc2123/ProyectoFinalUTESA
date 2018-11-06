@@ -171,6 +171,7 @@ namespace CapaPresentacion
         {
          
             limpiarformulario();
+            
         }
 
         private void panelMenuBAR_Paint(object sender, PaintEventArgs e)
@@ -213,6 +214,11 @@ namespace CapaPresentacion
         private void btnUbicacion_MouseClick(object sender, MouseEventArgs e)
         {
             AbrirFormulario<frmUbicacion>();
+        }
+
+        private void btnSuplidor_MouseClick(object sender, MouseEventArgs e)
+        {
+            AbrirFormulario<frmSuplidor>();
         }
     }
 }

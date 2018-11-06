@@ -12,8 +12,14 @@ using CapaNegocios;
 
 namespace CapaPresentacion
 {
-    public partial class frmUbicacion : Form
+    public partial class frmSuplidor : Form
     {
+        public frmSuplidor()
+        {
+            InitializeComponent();
+        }
+
+
         private bool N = false;
         private bool E = false;
 
@@ -30,9 +36,21 @@ namespace CapaPresentacion
         private void limpiar()
         {
             txtNombre.Clear();
-            txtDescripcion.Clear();
+            txtDireccion.Clear();
             txtCodigo.Clear();
+            cbEstado.Text = "Activo";
+            txtApellido.Clear();
+            txtTelefono.Clear();
+            cbITdentificacion.Text = "--Seleccionar--";
+            txtNOIdentificacion.Clear();
+            cbCuidad.Text = "--Seleccionar--";
+            cbSector.Text = "--Seleccionar--";
+            txtNombreContactor.Clear();
+            txtTelefonoContacto.Clear();
+            txtCorreo.Clear();
             txtNombre.Focus();
+            rdPersona.Checked = true;
+            rdEmpresa.Checked = false;
         }
         private void DisDTGV()
         {
@@ -52,7 +70,19 @@ namespace CapaPresentacion
         private void Habilitar(bool stado)
         {
             txtNombre.ReadOnly = !stado;
-            txtDescripcion.ReadOnly = !stado;
+            txtDireccion.ReadOnly = !stado;
+            cbEstado.Enabled = stado;
+            txtApellido.ReadOnly = !stado;
+            txtTelefono.ReadOnly = !stado;
+            cbITdentificacion.Enabled = stado;
+            txtNOIdentificacion.ReadOnly = !stado;
+            cbCuidad.Enabled = stado;
+            cbSector.Enabled = stado;
+            txtNombreContactor.ReadOnly = !stado;
+            txtTelefonoContacto.ReadOnly = !stado;
+            txtCorreo.ReadOnly = !stado;
+            rdEmpresa.Enabled = stado;
+            rdPersona.Enabled = stado;
         }
         private void HoB_btn()
         {
@@ -79,7 +109,7 @@ namespace CapaPresentacion
         {
             try
             {
-                dtgvListado.DataSource = NUbicacion.Mostrar();
+                dtgvListado.DataSource = NSuplidor.Mostrar();
                 dtgvListado.Columns[3].Width = 300;
                 dtgvListado.Columns[2].Width = 250;
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
@@ -93,20 +123,20 @@ namespace CapaPresentacion
         private void BuscarNombre()
         {
 
-            dtgvListado.DataSource = NUbicacion.Buscar_Nombre(mtxtbuscar.Text);
+            dtgvListado.DataSource = NSuplidor.Buscar_Nombre(mtxtbuscar.Text);
             dtgvListado.Columns[3].Width = 300;
             dtgvListado.Columns[2].Width = 250;
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
-        private void BuscarDescripcion()
+        private void BuscarID()
         {
 
-            dtgvListado.DataSource = NUbicacion.Buscar_Descripcion(mtxtbuscar.Text);
+            dtgvListado.DataSource = NSuplidor.Buscar_ID(mtxtbuscar.Text);
             dtgvListado.Columns[3].Width = 300;
             dtgvListado.Columns[2].Width = 250;
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
-        private void Nombre_O_ID()
+        private void Nombre_O_Descripcion()
         {
             if (cbBuscar.Text == "Nombre")
             {
@@ -114,7 +144,7 @@ namespace CapaPresentacion
             }
             else if (cbBuscar.Text == "Descripcion")
             {
-                BuscarDescripcion();
+                BuscarID();
             }
 
         }
@@ -127,28 +157,44 @@ namespace CapaPresentacion
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-        public frmUbicacion()
-        {
-            InitializeComponent();
-        }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void frmUbicacion_Load(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbITdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmSuplidor_Load(object sender, EventArgs e)
         {
             DisDTGV();
             txtCodigo.ReadOnly = true;
             MostrarDatos();
             Habilitar(false);
             HoB_btn();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
@@ -160,17 +206,11 @@ namespace CapaPresentacion
             }
         }
 
-        private void cbBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
             if (cbBuscar.Text != "--Seleccionar--")
             {
-                Nombre_O_ID();
+                Nombre_O_Descripcion();
             }
             else
             {
@@ -193,35 +233,67 @@ namespace CapaPresentacion
             txtNombre.Focus();
         }
 
+        private string PersonaOEmpresa()
+        {
+            string retorno = "";
+            
+            return retorno;
+        }
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 ErrorIcono.Clear();
 
                 string msgRespuesta = "";
-                if (txtNombre.Text == "" || txtDescripcion.Text == "")
+                if (txtNombre.Text == "" || cbITdentificacion.Text == "--Seleccionar--" || txtNOIdentificacion.Text == "   -       -" || txtNOIdentificacion.Text == "   -     -"||txtNombreContactor.Text == "")
                 {
                     MsgError("Debe ingresar los datos correctamente para continuar: ");
                 }
-                if (txtNombre.Text == string.Empty)
+                if (cbITdentificacion.Text == "--Seleccionar--")
                 {
-                    ErrorIcono.SetError(txtNombre, "Debe ingresar un nombre");
+                    ErrorIcono.SetError(cbITdentificacion, "Debe Seleccionar un Tipo de Identificacion");
                 }
-                if (txtDescripcion.Text == string.Empty)
+                if (txtNOIdentificacion.Text == string.Empty && cbITdentificacion.Text == "Pasaporte")
                 {
-                    ErrorIcono.SetError(txtDescripcion, "Debe Ingresar una Descripcion");
+                    ErrorIcono.SetError(txtNOIdentificacion, "Debe ingresar un Pasaporte");
                 }
+
+                if (txtNOIdentificacion.Text == "   -       -")
+                {
+                    ErrorIcono.SetError(txtNOIdentificacion, "Debe ingresar una Cedula");
+                }
+                if (txtNOIdentificacion.Text == "   -     -")
+                {
+                    ErrorIcono.SetError(txtNOIdentificacion, "Debe ingresar una RNC");
+                }
+                if (rdPersona.Checked == true)
+                {
+                    if (txtApellido.Text == "")
+                    {
+                        ErrorIcono.SetError(txtApellido, "Debe ingresar un Apellido");
+                    }
+                }
+                if (txtNombre.Text == "")
+                {
+                    ErrorIcono.SetError(txtNombre, "Debe ingresar un Nombre del Cliente");
+                }
+                if (txtNombreContactor.Text == "")
+                {
+                    ErrorIcono.SetError(txtNombreContactor, "Debe ingresar un Contacto");
+                }
+                
+
                 else
                 {
                     if (N == true)
                     {
-                        msgRespuesta = NUbicacion.Ingresar(txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
+                       // msgRespuesta = NSuplidor.Ingresar(cbEstado.Text,);
                     }
                     else
                     {
-                        msgRespuesta = NUbicacion.Modificar(Convert.ToInt32(txtCodigo.Text), txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
+                   //    msgRespuesta = NUbicacion.Modificar(Convert.ToInt32(txtCodigo.Text), txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
                     }
                     if (msgRespuesta.Equals("Ok"))
                     {
@@ -251,146 +323,54 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        private void SeleccionarTipoID()
         {
 
-            int comparar = dtgvListado.RowCount;
-            DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (Result == DialogResult.Yes)
-            {
-                N = false;
-                E = false;
-                HoB_btn();
-                limpiar();
-
-                Habilitar(false);
-                try
-                {
-                    string Codigo;
-                    string Respuesta = "";
-                    foreach (DataGridViewRow row in dtgvListado.Rows)
-                    {
-                        if (Convert.ToBoolean(row.Cells[0].Value))
-                        {
-                            Codigo = Convert.ToString(row.Cells[1].Value);
-                            Respuesta = NUbicacion.Eliminar(Convert.ToInt32(Codigo));
-                            if (Respuesta != ("Ok"))
-                            { MsgError(Respuesta); }
-                        }
-
-                    }
-                    MostrarDatos();
-                    if (comparar != dtgvListado.RowCount)
-                    {
-                        MsgConfirmacion("Se han eliminado los datos correctamente");
-                        mtxtbuscar.Text = "";
-                    }
-                    else
-                    {
-                        MsgError("Debe seleccionar los campos que desea eliminar");
-                        mtxtbuscar.Text = "";
-                    }
-                    SelectAll.Checked = false;
-                    MostrarDatos();
-
-                    {
-
-                    }
-
-                }
-
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-
-            }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void cbITdentificacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals(""))
+            if (cbITdentificacion.Text == "Cedula")
             {
-                MsgError("Debe Seleccionar que registro va a editar");
+                txtNOIdentificacion.Mask = "000-0000000-0";
+            }
+            else if (cbITdentificacion.Text == "RNC")
+            {
+                txtNOIdentificacion.Mask = "000-00000-0";
             }
             else
             {
-                E = true;
-                HoB_btn();
-                Habilitar(true);
+                txtNOIdentificacion.Mask = "";
+            }
+           
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdPersona_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdEmpresa.Checked == true)
+            {
+                rdPersona.Checked = false;
+                txtApellido.ReadOnly = true;
             }
         }
 
-        private void dtgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void rdEmpresa_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            if (rdPersona.Checked == true)
             {
-                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvListado.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
-            }
-            catch (Exception)
-            {
-
-
+                rdEmpresa.Checked = false;
+                txtApellido.ReadOnly = false;
             }
         }
 
-        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void txtApellido_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-
-                N = false;
-                E = false;
-                HoB_btn();
-                limpiar();
-                Habilitar(false);
-                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
-                txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
-                txtDescripcion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Descripcion"].Value);
-                tcProyecto.SelectedIndex = 1;
-            }
-            catch (Exception)
-            {
-
-
-            }
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            N = false;
-            E = false;
-            HoB_btn();
-            limpiar();
-            Habilitar(false);
-            ErrorIcono.Clear();
-        }
-
-        private void SelectAll_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (SelectAll.Checked == true)
-            {
-                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
-                {
-                    dtgvListado.Rows[i].Cells[0].Value = true;
-                }
-            }
-            else
-            {
-                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
-                {
-                    dtgvListado.Rows[i].Cells[0].Value = false;
-                }
-            }
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            rptUbicacion reportes = new rptUbicacion();
-            reportes.ShowDialog();
+            
         }
     }
 }

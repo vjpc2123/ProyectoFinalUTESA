@@ -107,6 +107,12 @@
     <Compile Include="FrmReportes\rptCategorias.designer.cs">
       <DependentUpon>rptCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuplidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuplidor.Designer.cs">
+      <DependentUpon>frmSuplidor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportes\rptCategorias.resx">
       <DependentUpon>rptCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuplidor.resx">
+      <DependentUpon>frmSuplidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacion.resx">
       <DependentUpon>frmUbicacion.cs</DependentUpon>
