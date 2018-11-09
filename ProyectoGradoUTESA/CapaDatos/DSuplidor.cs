@@ -175,6 +175,13 @@ namespace CapaDatos
                 parIdentificacion.Value = Suplidores.Identificacion;
                 cmd.Parameters.Add(parIdentificacion);
 
+                SqlParameter parCorreoElectronico = new SqlParameter();
+                parCorreoElectronico.ParameterName = "@correoelectronico";
+                parCorreoElectronico.SqlDbType = SqlDbType.VarChar;
+                parCorreoElectronico.Size = 150;
+                parCorreoElectronico.Value = Suplidores.CorreoElectronico;
+                cmd.Parameters.Add(parCorreoElectronico);
+
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
             }
             catch (Exception ex)
@@ -294,6 +301,13 @@ namespace CapaDatos
                 parIdentificacion.Size = 50;
                 parIdentificacion.Value = Suplidores.Identificacion;
                 cmd.Parameters.Add(parIdentificacion);
+
+                SqlParameter parCorreoElectronico = new SqlParameter();
+                parCorreoElectronico.ParameterName = "@correoelectronico";
+                parCorreoElectronico.SqlDbType = SqlDbType.VarChar;
+                parCorreoElectronico.Size = 150;
+                parCorreoElectronico.Value = Suplidores.CorreoElectronico;
+                cmd.Parameters.Add(parCorreoElectronico);
 
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
             }

@@ -110,8 +110,8 @@ namespace CapaPresentacion
             try
             {
                 dtgvListado.DataSource = NSuplidor.Mostrar();
-                dtgvListado.Columns[3].Width = 300;
-                dtgvListado.Columns[2].Width = 250;
+                dtgvListado.Columns[2].Visible = false;
+                dtgvListado.Columns[1].Visible = false;
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
             }
             catch (Exception ex)
@@ -124,16 +124,16 @@ namespace CapaPresentacion
         {
 
             dtgvListado.DataSource = NSuplidor.Buscar_Nombre(mtxtbuscar.Text);
-            dtgvListado.Columns[3].Width = 300;
-            dtgvListado.Columns[2].Width = 250;
+            dtgvListado.Columns[2].Visible = false;
+            dtgvListado.Columns[1].Visible = false;
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
         private void BuscarID()
         {
 
             dtgvListado.DataSource = NSuplidor.Buscar_ID(mtxtbuscar.Text);
-            dtgvListado.Columns[3].Width = 300;
-            dtgvListado.Columns[2].Width = 250;
+            dtgvListado.Columns[2].Visible = false;
+            dtgvListado.Columns[1].Visible = false;
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
         }
         private void Nombre_O_Descripcion()
@@ -236,6 +236,15 @@ namespace CapaPresentacion
         private string PersonaOEmpresa()
         {
             string retorno = "";
+
+            if (rdEmpresa.Checked == true)
+            {
+                retorno = rdEmpresa.Text;
+            }
+            else if (rdPersona.Checked == true)
+            {
+                retorno = rdPersona.Text;
+            }
             
             return retorno;
         }
@@ -289,11 +298,11 @@ namespace CapaPresentacion
                 {
                     if (N == true)
                     {
-                       // msgRespuesta = NSuplidor.Ingresar(cbEstado.Text,);
+                        msgRespuesta = NSuplidor.Ingresar(cbEstado.Text,PersonaOEmpresa(),txtNombre.Text,txtApellido.Text,txtTelefono.Text,txtDireccion.Text,cbCuidad.Text,cbSector.Text,txtNombreContactor.Text,txtTelefonoContacto.Text,cbITdentificacion.Text,txtNOIdentificacion.Text,txtCorreo.Text);
                     }
                     else
                     {
-                   //    msgRespuesta = NUbicacion.Modificar(Convert.ToInt32(txtCodigo.Text), txtNombre.Text.Trim(), txtDescripcion.Text.Trim());
+                       msgRespuesta = NSuplidor.Modificar(Convert.ToInt32(txtCodigo.Text),cbEstado.Text, PersonaOEmpresa(), txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtDireccion.Text, cbCuidad.Text, cbSector.Text, txtNombreContactor.Text, txtTelefonoContacto.Text, cbITdentificacion.Text, txtNOIdentificacion.Text, txtCorreo.Text);
                     }
                     if (msgRespuesta.Equals("Ok"))
                     {
@@ -371,6 +380,123 @@ namespace CapaPresentacion
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Equals(""))
+            {
+                MsgError("Debe Seleccionar que registro va a editar");
+            }
+            else
+            {
+                E = true;
+                HoB_btn();
+                Habilitar(true);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+            int comparar = dtgvListado.RowCount;
+            DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (Result == DialogResult.Yes)
+            {
+                N = false;
+                E = false;
+                HoB_btn();
+                limpiar();
+
+                Habilitar(false);
+                try
+                {
+                    string Codigo;
+                    string Respuesta = "";
+                    foreach (DataGridViewRow row in dtgvListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Respuesta = NSuplidor.Eliminar(Convert.ToInt32(Codigo));
+                            if (Respuesta != ("Ok"))
+                            { MsgError(Respuesta); }
+                        }
+
+                    }
+                    MostrarDatos();
+                    if (comparar != dtgvListado.RowCount)
+                    {
+                        MsgConfirmacion("Se han eliminado los datos correctamente");
+                        mtxtbuscar.Text = "";
+                    }
+                    else
+                    {
+                        MsgError("Debe seleccionar los campos que desea eliminar");
+                        mtxtbuscar.Text = "";
+                    }
+                    SelectAll.Checked = false;
+                    MostrarDatos();
+
+                    {
+
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+
+            }
+        }
+
+        private void dtgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvListado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                N = false;
+                E = false;
+                HoB_btn();
+                limpiar();
+                Habilitar(false);
+                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
+                cbEstado.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Estatus"].Value);
+                txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
+                txtApellido.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Apellido"].Value);
+                cbITdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Documento"].Value);
+                txtNOIdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Identificacion"].Value);
+                txtTelefono.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Telefono"].Value);
+                txtDireccion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Direccion"].Value);
+                cbCuidad.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Ciudad"].Value);
+                cbSector.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Sector"].Value);
+                txtNombreContactor.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Contacto"].Value);
+                txtTelefonoContacto.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["TelefonoContacto"].Value);
+                txtCorreo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["CorreoElectronico"].Value);
+                tcCategoria.SelectedIndex = 1;
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
     }
 }

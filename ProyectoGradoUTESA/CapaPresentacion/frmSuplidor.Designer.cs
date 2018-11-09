@@ -43,9 +43,11 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dtgvListado = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tpDetalle = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rdEmpresa = new System.Windows.Forms.RadioButton();
+            this.rdPersona = new System.Windows.Forms.RadioButton();
             this.txtNombreContactor = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -79,9 +81,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ErrorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.rdPersona = new System.Windows.Forms.RadioButton();
-            this.rdEmpresa = new System.Windows.Forms.RadioButton();
-            this.label16 = new System.Windows.Forms.Label();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelHeader.SuspendLayout();
             this.tcCategoria.SuspendLayout();
             this.tpLista.SuspendLayout();
@@ -274,13 +274,8 @@
             this.dtgvListado.ReadOnly = true;
             this.dtgvListado.Size = new System.Drawing.Size(902, 473);
             this.dtgvListado.TabIndex = 14;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 50;
+            this.dtgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellContentClick);
+            this.dtgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellDoubleClick);
             // 
             // tpDetalle
             // 
@@ -340,6 +335,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 166);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 18);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Tipo de Suplidor";
+            // 
+            // rdEmpresa
+            // 
+            this.rdEmpresa.AutoSize = true;
+            this.rdEmpresa.Location = new System.Drawing.Point(210, 166);
+            this.rdEmpresa.Name = "rdEmpresa";
+            this.rdEmpresa.Size = new System.Drawing.Size(86, 22);
+            this.rdEmpresa.TabIndex = 28;
+            this.rdEmpresa.Text = "Empresa";
+            this.rdEmpresa.UseVisualStyleBackColor = true;
+            this.rdEmpresa.CheckedChanged += new System.EventHandler(this.rdEmpresa_CheckedChanged);
+            // 
+            // rdPersona
+            // 
+            this.rdPersona.AutoSize = true;
+            this.rdPersona.Checked = true;
+            this.rdPersona.Location = new System.Drawing.Point(122, 164);
+            this.rdPersona.Name = "rdPersona";
+            this.rdPersona.Size = new System.Drawing.Size(82, 22);
+            this.rdPersona.TabIndex = 27;
+            this.rdPersona.TabStop = true;
+            this.rdPersona.Text = "Persona";
+            this.rdPersona.UseVisualStyleBackColor = true;
+            this.rdPersona.CheckedChanged += new System.EventHandler(this.rdPersona_CheckedChanged);
+            // 
             // txtNombreContactor
             // 
             this.txtNombreContactor.Location = new System.Drawing.Point(611, 324);
@@ -387,6 +416,7 @@
             // txtTelefonoContacto
             // 
             this.txtTelefonoContacto.Location = new System.Drawing.Point(611, 366);
+            this.txtTelefonoContacto.Mask = "(999) 000-0000";
             this.txtTelefonoContacto.Name = "txtTelefonoContacto";
             this.txtTelefonoContacto.Size = new System.Drawing.Size(242, 24);
             this.txtTelefonoContacto.TabIndex = 21;
@@ -547,6 +577,7 @@
             this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEditar
             // 
@@ -564,6 +595,7 @@
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGrabar
             // 
@@ -680,39 +712,14 @@
             this.ErrorIcono.ContainerControl = this;
             this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
             // 
-            // rdPersona
+            // Eliminar
             // 
-            this.rdPersona.AutoSize = true;
-            this.rdPersona.Checked = true;
-            this.rdPersona.Location = new System.Drawing.Point(122, 164);
-            this.rdPersona.Name = "rdPersona";
-            this.rdPersona.Size = new System.Drawing.Size(82, 22);
-            this.rdPersona.TabIndex = 27;
-            this.rdPersona.TabStop = true;
-            this.rdPersona.Text = "Persona";
-            this.rdPersona.UseVisualStyleBackColor = true;
-            this.rdPersona.CheckedChanged += new System.EventHandler(this.rdPersona_CheckedChanged);
-            // 
-            // rdEmpresa
-            // 
-            this.rdEmpresa.AutoSize = true;
-            this.rdEmpresa.Location = new System.Drawing.Point(210, 166);
-            this.rdEmpresa.Name = "rdEmpresa";
-            this.rdEmpresa.Size = new System.Drawing.Size(86, 22);
-            this.rdEmpresa.TabIndex = 28;
-            this.rdEmpresa.Text = "Empresa";
-            this.rdEmpresa.UseVisualStyleBackColor = true;
-            this.rdEmpresa.CheckedChanged += new System.EventHandler(this.rdEmpresa_CheckedChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 166);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 18);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "Tipo de Suplidor";
+            this.Eliminar.Frozen = true;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Width = 50;
             // 
             // frmSuplidor
             // 
@@ -755,7 +762,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridView dtgvListado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TabPage tpDetalle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombreContactor;
@@ -794,5 +800,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton rdEmpresa;
         private System.Windows.Forms.RadioButton rdPersona;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
     }
 }
