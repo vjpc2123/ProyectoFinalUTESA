@@ -43,6 +43,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dtgvListado = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tpDetalle = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ErrorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelHeader.SuspendLayout();
             this.tcCategoria.SuspendLayout();
             this.tpLista.SuspendLayout();
@@ -171,6 +171,7 @@
             this.SelectAll.Size = new System.Drawing.Size(15, 14);
             this.SelectAll.TabIndex = 18;
             this.SelectAll.UseVisualStyleBackColor = false;
+            this.SelectAll.CheckedChanged += new System.EventHandler(this.SelectAll_CheckedChanged);
             // 
             // mtxtbuscar
             // 
@@ -206,6 +207,7 @@
             this.cbBuscar.Size = new System.Drawing.Size(137, 23);
             this.cbBuscar.TabIndex = 0;
             this.cbBuscar.Text = "--Seleccionar--";
+            this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
             // btnImprimir
             // 
@@ -258,6 +260,7 @@
             this.btnBorrar.TabIndex = 4;
             this.btnBorrar.Text = "Borrar Registro Seleccionado";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // dtgvListado
             // 
@@ -276,6 +279,15 @@
             this.dtgvListado.TabIndex = 14;
             this.dtgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellContentClick);
             this.dtgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellDoubleClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.Frozen = true;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Width = 50;
             // 
             // tpDetalle
             // 
@@ -711,15 +723,6 @@
             this.ErrorIcono.BlinkRate = 400;
             this.ErrorIcono.ContainerControl = this;
             this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.Frozen = true;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Eliminar.Width = 50;
             // 
             // frmSuplidor
             // 

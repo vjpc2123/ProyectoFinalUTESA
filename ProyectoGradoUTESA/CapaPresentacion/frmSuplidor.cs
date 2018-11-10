@@ -142,7 +142,7 @@ namespace CapaPresentacion
             {
                 BuscarNombre();
             }
-            else if (cbBuscar.Text == "Descripcion")
+            else
             {
                 BuscarID();
             }
@@ -398,6 +398,87 @@ namespace CapaPresentacion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            N = false;
+            E = false;
+            HoB_btn();
+            limpiar();
+            Habilitar(false);
+            ErrorIcono.Clear();
+        }
+
+        private void dtgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvListado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                N = false;
+                E = false;
+                HoB_btn();
+                limpiar();
+                Habilitar(false);
+                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
+                cbEstado.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Estatus"].Value);
+                txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
+                txtApellido.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Apellido"].Value);
+                cbITdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Documento"].Value);
+                txtNOIdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Identificacion"].Value);
+                txtTelefono.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Telefono"].Value);
+                txtDireccion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Direccion"].Value);
+                cbCuidad.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Ciudad"].Value);
+                cbSector.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Sector"].Value);
+                txtNombreContactor.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Contacto"].Value);
+                txtTelefonoContacto.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["TelefonoContacto"].Value);
+                txtCorreo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["CorreoElectronico"].Value);
+                if (Convert.ToString(dtgvListado.CurrentRow.Cells["TipoSuplidor"].Value )== "Persona")
+                {
+                    rdPersona.Checked = true;
+                }
+                else
+                {
+                    rdEmpresa.Checked = true;
+                }
+                tcCategoria.SelectedIndex = 1;
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbBuscar.Text == "Cedula")
+            {
+                mtxtbuscar.Mask = "000-0000000-0";
+            }
+            else if (cbBuscar.Text == "RNC")
+            {
+                mtxtbuscar.Mask = "000-00000-0";
+            }
+            else
+            {
+                mtxtbuscar.Mask = "";
+            }
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
 
             int comparar = dtgvListado.RowCount;
             DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -453,49 +534,22 @@ namespace CapaPresentacion
             }
         }
 
-        private void dtgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SelectAll_CheckedChanged(object sender, EventArgs e)
         {
-            try
+
+            if (SelectAll.Checked == true)
             {
-                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dtgvListado.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
+                {
+                    dtgvListado.Rows[i].Cells[0].Value = true;
+                }
             }
-            catch (Exception)
+            else
             {
-
-
-            }
-        }
-
-        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-
-                N = false;
-                E = false;
-                HoB_btn();
-                limpiar();
-                Habilitar(false);
-                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
-                cbEstado.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Estatus"].Value);
-                txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
-                txtApellido.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Apellido"].Value);
-                cbITdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Documento"].Value);
-                txtNOIdentificacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Identificacion"].Value);
-                txtTelefono.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Telefono"].Value);
-                txtDireccion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Direccion"].Value);
-                cbCuidad.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Ciudad"].Value);
-                cbSector.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Sector"].Value);
-                txtNombreContactor.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Contacto"].Value);
-                txtTelefonoContacto.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["TelefonoContacto"].Value);
-                txtCorreo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["CorreoElectronico"].Value);
-                tcCategoria.SelectedIndex = 1;
-            }
-            catch (Exception)
-            {
-
-
+                for (int i = 0; i <= dtgvListado.Rows.Count - 1; i++)
+                {
+                    dtgvListado.Rows[i].Cells[0].Value = false;
+                }
             }
         }
     }
