@@ -596,5 +596,10 @@ namespace CapaPresentacion
             pbImagen.Image = global::CapaPresentacion.Properties.Resources.Gallery_100px;
             pbImagen.SizeMode = PictureBoxSizeMode.CenterImage;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

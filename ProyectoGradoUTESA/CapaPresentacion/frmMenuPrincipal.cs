@@ -225,5 +225,15 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void btnCompra_MouseClick(object sender, MouseEventArgs e)
+        {
+            frmCompra frm = frmCompra.getinstancia();
+
+            frm.TopLevel = false;
+            panelFormularios.Controls.Add(frm);
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 }

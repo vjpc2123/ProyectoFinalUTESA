@@ -1,6 +1,6 @@
-﻿namespace CapaPresentacion.Vistas
+﻿namespace CapaPresentacion
 {
-    partial class frmVistaUbicacion
+    partial class frmVistaDetallesCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -52,20 +52,19 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(748, 30);
+            this.panelHeader.Size = new System.Drawing.Size(931, 30);
             this.panelHeader.TabIndex = 5;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
-            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Vista Ubicacion";
+            this.label1.Text = "Vista Articulos";
             // 
             // btnCerrar
             // 
@@ -76,7 +75,8 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::CapaPresentacion.Properties.Resources.Close_Window_25px1;
-            this.btnCerrar.Location = new System.Drawing.Point(720, 0);
+            this.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCerrar.Location = new System.Drawing.Point(903, 0);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 30);
@@ -92,8 +92,8 @@
             this.tcProyecto.Location = new System.Drawing.Point(0, 30);
             this.tcProyecto.Name = "tcProyecto";
             this.tcProyecto.SelectedIndex = 0;
-            this.tcProyecto.Size = new System.Drawing.Size(748, 427);
-            this.tcProyecto.TabIndex = 6;
+            this.tcProyecto.Size = new System.Drawing.Size(931, 585);
+            this.tcProyecto.TabIndex = 7;
             // 
             // tpLista
             // 
@@ -105,7 +105,7 @@
             this.tpLista.Location = new System.Drawing.Point(4, 24);
             this.tpLista.Name = "tpLista";
             this.tpLista.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLista.Size = new System.Drawing.Size(740, 399);
+            this.tpLista.Size = new System.Drawing.Size(923, 557);
             this.tpLista.TabIndex = 0;
             this.tpLista.Text = "Lista";
             this.tpLista.UseVisualStyleBackColor = true;
@@ -116,14 +116,14 @@
             this.mtxtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtbuscar.Location = new System.Drawing.Point(156, 11);
             this.mtxtbuscar.Name = "mtxtbuscar";
-            this.mtxtbuscar.Size = new System.Drawing.Size(393, 21);
+            this.mtxtbuscar.Size = new System.Drawing.Size(512, 21);
             this.mtxtbuscar.TabIndex = 16;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(570, 378);
+            this.lblTotal.Location = new System.Drawing.Point(704, 536);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 16);
             this.lblTotal.TabIndex = 15;
@@ -135,8 +135,12 @@
             this.cbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
+            "Codigo",
             "Nombre",
-            "Descripcion"});
+            "Categoria",
+            "Marca",
+            "Presentacion",
+            "Ubicacion"});
             this.cbBuscar.Location = new System.Drawing.Point(13, 9);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(137, 23);
@@ -153,7 +157,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Search_25px;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(573, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(756, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(108, 34);
             this.btnBuscar.TabIndex = 2;
@@ -168,25 +172,27 @@
             this.dtgvListado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvListado.Location = new System.Drawing.Point(0, 38);
             this.dtgvListado.Name = "dtgvListado";
             this.dtgvListado.ReadOnly = true;
-            this.dtgvListado.Size = new System.Drawing.Size(740, 335);
+            this.dtgvListado.Size = new System.Drawing.Size(923, 486);
             this.dtgvListado.TabIndex = 14;
-            this.dtgvListado.DoubleClick += new System.EventHandler(this.dtgvListado_DoubleClick);
             // 
-            // frmVistaUbicacion
+            // frmVistaDetallesCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 457);
+            this.ClientSize = new System.Drawing.Size(931, 615);
             this.Controls.Add(this.tcProyecto);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmVistaUbicacion";
-            this.Text = "frmUbicacion";
-            this.Load += new System.EventHandler(this.frmVistaUbicacion_Load);
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Name = "frmVistaDetallesCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmVistaDetallesCompra";
+            this.Load += new System.EventHandler(this.frmVistaDetallesCompra_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.tcProyecto.ResumeLayout(false);

@@ -68,7 +68,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1227, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1553, 55);
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
@@ -78,7 +78,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(1147, 38);
+            this.lblUserName.Location = new System.Drawing.Point(1473, 38);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(77, 17);
             this.lblUserName.TabIndex = 10;
@@ -91,7 +91,7 @@
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Window_25px;
-            this.btnMinimizar.Location = new System.Drawing.Point(1160, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(1486, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
             this.btnMinimizar.TabIndex = 7;
@@ -105,7 +105,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::CapaPresentacion.Properties.Resources.Close_Window_25px;
-            this.btnCerrar.Location = new System.Drawing.Point(1196, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(1522, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(30, 30);
             this.btnCerrar.TabIndex = 5;
@@ -147,7 +147,7 @@
             this.panelMenuBAR.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuBAR.Location = new System.Drawing.Point(0, 55);
             this.panelMenuBAR.Name = "panelMenuBAR";
-            this.panelMenuBAR.Size = new System.Drawing.Size(185, 770);
+            this.panelMenuBAR.Size = new System.Drawing.Size(185, 789);
             this.panelMenuBAR.TabIndex = 2;
             this.panelMenuBAR.Click += new System.EventHandler(this.panelMenuBAR_Click);
             this.panelMenuBAR.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuBAR_Paint);
@@ -159,7 +159,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::CapaPresentacion.Properties.Resources.Shutdown_27px;
-            this.button1.Location = new System.Drawing.Point(-3, 730);
+            this.button1.Location = new System.Drawing.Point(-3, 749);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 40);
             this.button1.TabIndex = 18;
@@ -205,6 +205,7 @@
             this.btnCompra.Text = "Compra";
             this.btnCompra.UseVisualStyleBackColor = true;
             this.btnCompra.Click += new System.EventHandler(this.btnArticulos_Click);
+            this.btnCompra.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCompra_MouseClick);
             // 
             // btnSuplidor
             // 
@@ -311,7 +312,7 @@
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(185, 55);
             this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(1042, 770);
+            this.panelFormularios.Size = new System.Drawing.Size(1368, 789);
             this.panelFormularios.TabIndex = 3;
             this.panelFormularios.Click += new System.EventHandler(this.btnArticulos_Click);
             this.panelFormularios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularios_Paint);
@@ -325,7 +326,7 @@
             this.panelSeccionProyecto.Controls.Add(this.btnPresentacion);
             this.panelSeccionProyecto.Controls.Add(this.btnMarca);
             this.panelSeccionProyecto.Controls.Add(this.button2);
-            this.panelSeccionProyecto.Location = new System.Drawing.Point(0, 77);
+            this.panelSeccionProyecto.Location = new System.Drawing.Point(0, 86);
             this.panelSeccionProyecto.Name = "panelSeccionProyecto";
             this.panelSeccionProyecto.Size = new System.Drawing.Size(184, 389);
             this.panelSeccionProyecto.TabIndex = 0;
@@ -461,7 +462,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 825);
+            this.ClientSize = new System.Drawing.Size(1553, 844);
             this.Controls.Add(this.panelFormularios);
             this.Controls.Add(this.panelMenuBAR);
             this.Controls.Add(this.panelHeader);

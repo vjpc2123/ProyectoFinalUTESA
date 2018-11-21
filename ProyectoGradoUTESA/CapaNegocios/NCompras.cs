@@ -20,6 +20,21 @@ namespace CapaNegocios
             obj.FechaCompra = fechaCompra;
             return obj.InsertarCompra(obj);
         }
+
+        public static string IngresarDetalleCompra(int iddetallecompra,int idcompra2,int idarticulo,int cantidad,decimal costounitario,decimal comprabruto,decimal descuento, decimal itbis, decimal compraneto)
+        {
+            DCompras obj = new DCompras();
+            obj.IDDetalleCompra = iddetallecompra;
+            obj.IDCompra2 = idcompra2;
+            obj.IDArticulo = idarticulo;
+            obj.Cantidad = cantidad;
+            obj.CostoUnitario = costounitario;
+            obj.CompraBruto = comprabruto;
+            obj.Descuento = descuento;
+            obj.ITBIS = itbis;
+            obj.CompraNeto = compraneto;
+            return obj.Insertar_DetalleCompra(obj);
+        }
     }
 
 }
