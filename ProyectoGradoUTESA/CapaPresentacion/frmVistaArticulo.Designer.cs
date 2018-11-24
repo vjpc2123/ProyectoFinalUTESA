@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmVistaDetallesCompra
+    partial class frmVistaArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(931, 30);
             this.panelHeader.TabIndex = 5;
+            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
             // label1
             // 
@@ -174,13 +175,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListado.Location = new System.Drawing.Point(0, 38);
+            this.dtgvListado.Location = new System.Drawing.Point(3, 38);
             this.dtgvListado.Name = "dtgvListado";
             this.dtgvListado.ReadOnly = true;
             this.dtgvListado.Size = new System.Drawing.Size(923, 486);
             this.dtgvListado.TabIndex = 14;
+            this.dtgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListado_CellDoubleClick);
+            this.dtgvListado.DoubleClick += new System.EventHandler(this.dtgvListado_DoubleClick);
             // 
-            // frmVistaDetallesCompra
+            // frmVistaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,8 +191,7 @@
             this.Controls.Add(this.tcProyecto);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Name = "frmVistaDetallesCompra";
+            this.Name = "frmVistaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaDetallesCompra";
             this.Load += new System.EventHandler(this.frmVistaDetallesCompra_Load);

@@ -70,7 +70,7 @@ namespace CapaPresentacion
             txtMarca.Clear();
             txtUbicacion.Clear();
             txtUbicacionID.Clear();
-            txtCodigo.Clear();
+            txtCodigos.Clear();
             pbImagen.Image = global::CapaPresentacion.Properties.Resources.Gallery_100px;
             pbImagen.SizeMode = PictureBoxSizeMode.CenterImage;
             txtNombre.Focus();
@@ -118,13 +118,22 @@ namespace CapaPresentacion
             }
         }
 
+        private void ocultar()
+        {
+            this.dtgvListado.Columns["idCategoria"].Visible = false;
+            this.dtgvListado.Columns["idPresentacion"].Visible = false;
+            this.dtgvListado.Columns["idMarca"].Visible = false;
+            this.dtgvListado.Columns["idUbicacion"].Visible = false;
+        }
 
         private void MostrarDatos()
         {
             try
             {
+                
                 dtgvListado.DataSource = NArticulo.Mostar();
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
             }
             catch (Exception ex)
             {
@@ -137,8 +146,10 @@ namespace CapaPresentacion
         {
             try
             {
+               
                 dtgvListado.DataSource = NArticulo.BuscarCodigoArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
 
             }
             catch (Exception ex)
@@ -151,8 +162,10 @@ namespace CapaPresentacion
         {
             try
             {
+               
                 dtgvListado.DataSource = NArticulo.BuscarNombreArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
 
             }
             catch (Exception ex)
@@ -166,8 +179,10 @@ namespace CapaPresentacion
         {
             try
             {
+             
                 dtgvListado.DataSource = NArticulo.BuscarCategoriaArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
 
             }
             catch (Exception ex)
@@ -181,8 +196,10 @@ namespace CapaPresentacion
         {
             try
             {
+          
                 dtgvListado.DataSource = NArticulo.BuscarPresentacionArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
 
             }
             catch (Exception ex)
@@ -197,9 +214,10 @@ namespace CapaPresentacion
         {
             try
             {
+               
                 dtgvListado.DataSource = NArticulo.BuscarMarcaArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
-
+                ocultar();
             }
             catch (Exception ex)
             {
@@ -211,8 +229,10 @@ namespace CapaPresentacion
         {
             try
             {
+            
                 dtgvListado.DataSource = NArticulo.BuscarMarcaArticulo(mtxtbuscar.Text);
                 lblTotal.Text = "Total de Registros: " + Convert.ToString(dtgvListado.RowCount);
+                ocultar();
 
             }
             catch (Exception ex)
@@ -378,6 +398,7 @@ namespace CapaPresentacion
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
                     pbImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     pbImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
                     byte[] imagen = ms.GetBuffer();
                     if (N == true)
                     {
@@ -385,7 +406,7 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        msgRespuesta = NArticulo.Editar(txtCodigo.Text,txtNombre.Text.Trim(),txtDescripcion.Text.Trim(),txtCategoriaID.Text,txtPresentacionID.Text,txtUbicacionID.Text,txtMarcaID.Text,imagen);
+                        msgRespuesta = NArticulo.Editar(Convert.ToInt32(txtCodigos.Text.Trim()),txtNombre.Text.Trim(),txtDescripcion.Text.Trim(),Convert.ToInt32(txtCategoriaID.Text),Convert.ToInt32(txtPresentacionID.Text),Convert.ToInt32(txtUbicacionID.Text),Convert.ToInt32(txtMarcaID.Text),imagen);
                     }
                     if (msgRespuesta.Equals("Ok"))
                     {
@@ -417,7 +438,7 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals(""))
+            if (txtCodigos.Text.Equals(""))
             {
                 MsgError("Debe Seleccionar que registro va a editar");
             }
@@ -453,12 +474,16 @@ namespace CapaPresentacion
                 HoB_btn();
                 limpiar();
                 Habilitar(false);
-                txtCodigo.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
+                txtCodigos.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
                 txtNombre.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
                 txtDescripcion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Descripcion"].Value);
+                txtCategoriaID.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["idCategoria"].Value);
                 txtCategoria.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Categoria"].Value);
+                txtPresentacionID.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["idPresentacion"].Value);
                 txtPresentacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Presentacion"].Value);
+                txtUbicacionID.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["idUbicacion"].Value);
                 txtUbicacion.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Ubicacion"].Value);
+                txtMarcaID.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["idMarca"].Value);
                 txtMarca.Text = Convert.ToString(dtgvListado.CurrentRow.Cells["Marca"].Value);
                 byte[] imagenbuffer = (byte[])dtgvListado.CurrentRow.Cells["Imagen"].Value;
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenbuffer);
@@ -510,7 +535,7 @@ namespace CapaPresentacion
         private void frmArticulo_Load(object sender, EventArgs e)
         {
             DisDTGV();
-            txtCodigo.ReadOnly = true;
+            txtCodigos.ReadOnly = true;
             MostrarDatos();
             Habilitar(false);
             HoB_btn();
@@ -598,6 +623,68 @@ namespace CapaPresentacion
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+
+            int comparar = dtgvListado.RowCount;
+            DialogResult Result = MessageBox.Show("Desea Eliminar los registros seleccionados?", "Sistema Facturacion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (Result == DialogResult.Yes)
+            {
+                N = false;
+                E = false;
+                HoB_btn();
+                limpiar();
+
+                Habilitar(false);
+                try
+                {
+                    string Codigo;
+                    string Respuesta = "";
+                    foreach (DataGridViewRow row in dtgvListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Respuesta = NArticulo.Eliminar(Convert.ToInt32(Codigo));
+                            if (Respuesta != ("Ok"))
+                            { MsgError(Respuesta); }
+                        }
+
+                    }
+                    MostrarDatos();
+                    if (comparar != dtgvListado.RowCount)
+                    {
+                        MsgConfirmacion("Se han eliminado los datos correctamente");
+                        mtxtbuscar.Text = "";
+                    }
+                    else
+                    {
+                        MsgError("Debe seleccionar los campos que desea eliminar");
+                        mtxtbuscar.Text = "";
+                    }
+                    SelectAll.Checked = false;
+                    MostrarDatos();
+
+                    {
+
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+
+            }
+        }
+
+        private void tpLista_Click(object sender, EventArgs e)
         {
 
         }

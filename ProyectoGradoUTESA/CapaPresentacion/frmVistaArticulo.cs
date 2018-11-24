@@ -12,9 +12,9 @@ using CapaNegocios;
 
 namespace CapaPresentacion
 {
-    public partial class frmVistaDetallesCompra : Form
+    public partial class frmVistaArticulo : Form
     {
-        public frmVistaDetallesCompra()
+        public frmVistaArticulo()
         {
             InitializeComponent();
         }
@@ -214,6 +214,37 @@ namespace CapaPresentacion
             DisDTGV();
          
             MostrarDatos();
+        }
+
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_BUTTON, HT_Caption, 0);
+            }
+        }
+
+        private void dtgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtgvListado_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                frmVistaDetalleCompra frm = frmVistaDetalleCompra.getinstancia();
+                string par1, par2;
+                par1 = Convert.ToString(dtgvListado.CurrentRow.Cells["Codigo"].Value);
+                par2 = Convert.ToString(dtgvListado.CurrentRow.Cells["Nombre"].Value);
+                frm.setterArticulos(par1, par2);
+                this.Hide();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

@@ -125,11 +125,23 @@
     <Compile Include="frmUbicacion.Designer.cs">
       <DependentUpon>frmUbicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistaArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaArticulo.Designer.cs">
+      <DependentUpon>frmVistaArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVistaDetalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVistaDetalleCompra.Designer.cs">
       <DependentUpon>frmVistaDetalleCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVistaSuplidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaSuplidor.Designer.cs">
+      <DependentUpon>frmVistaSuplidor.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\frmVistaCategoria.cs">
       <SubType>Form</SubType>
@@ -213,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacion.resx">
       <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaArticulo.resx">
+      <DependentUpon>frmVistaArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaDetalleCompra.resx">
       <DependentUpon>frmVistaDetalleCompra.cs</DependentUpon>

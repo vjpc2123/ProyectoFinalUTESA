@@ -71,7 +71,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtCodigos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -158,6 +158,7 @@
             this.tpLista.TabIndex = 0;
             this.tpLista.Text = "Lista";
             this.tpLista.UseVisualStyleBackColor = true;
+            this.tpLista.Click += new System.EventHandler(this.tpLista_Click);
             // 
             // SelectAll
             // 
@@ -265,6 +266,7 @@
             this.btnBorrar.TabIndex = 4;
             this.btnBorrar.Text = "Borrar Registro Seleccionado";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // dtgvListado
             // 
@@ -334,7 +336,7 @@
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.txtCodigos);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -669,12 +671,12 @@
             this.txtNombre.Size = new System.Drawing.Size(307, 24);
             this.txtNombre.TabIndex = 1;
             // 
-            // txtCodigo
+            // txtCodigos
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(115, 94);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(157, 24);
-            this.txtCodigo.TabIndex = 0;
+            this.txtCodigos.Location = new System.Drawing.Point(115, 94);
+            this.txtCodigos.Name = "txtCodigos";
+            this.txtCodigos.Size = new System.Drawing.Size(157, 24);
+            this.txtCodigos.TabIndex = 0;
             // 
             // label5
             // 
@@ -788,7 +790,7 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtCodigos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

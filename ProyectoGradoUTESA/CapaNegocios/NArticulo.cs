@@ -27,26 +27,26 @@ namespace CapaNegocios
 
             }
 
-            public static string Editar(string idarticulo, string nombre, string descripcion, string idcategoria, string idpresentacion, string idubicacion, string idmarca, byte[] Imagen)
+            public static string Editar(int idarticulo, string nombre, string descripcion, int idcategoria, int idpresentacion, int idubicacion, int idmarca, byte[] Imagen)
             {
 
                 DArticulo obj = new DArticulo();
-                obj.IdArticulo = Convert.ToInt32(idarticulo);
-                obj.Nombre = nombre;
-                obj.Descripcion = descripcion;
-                obj.IdCategoria = Convert.ToInt32(idcategoria);
-                obj.IdPresentacion = Convert.ToInt32(idpresentacion);
-                obj.idUbicacion = Convert.ToInt32(idubicacion);
-                obj.IdMarca = Convert.ToInt32(idmarca);
-                obj.Imagen = Imagen;
-                return obj.Editar(obj);
+                obj.IdArticulo = idarticulo;
+            obj.Nombre = nombre;
+            obj.Descripcion = descripcion;
+            obj.IdCategoria = idcategoria;
+            obj.IdPresentacion = idpresentacion;
+            obj.idUbicacion = idubicacion;
+            obj.IdMarca = idmarca;
+            obj.Imagen = Imagen;
+            return obj.EditarArticulo(obj);
 
             }
             public static string Eliminar(int idarticulo)
             {
 
                 DArticulo obj = new DArticulo();
-                obj.idUbicacion = idarticulo;
+                obj.IdArticulo = idarticulo;
                 return obj.EliminarArticulo(obj);
 
 

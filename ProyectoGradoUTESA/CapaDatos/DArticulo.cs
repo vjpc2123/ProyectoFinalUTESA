@@ -135,7 +135,7 @@ namespace CapaDatos
             finally { con.CerrarConexion();}
             return Retorno;
         }
-        public string Editar(DArticulo Articulo)
+        public string EditarArticulo(DArticulo Articulo)
         {
             string Retorno = "";
 
@@ -143,6 +143,8 @@ namespace CapaDatos
 
             try
             {
+
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con.AbriConexion();
                 cmd.CommandText = "MODIFICAR_ARTICULO";
@@ -194,12 +196,11 @@ namespace CapaDatos
 
                 SqlParameter parIdMarca = new SqlParameter();
                 parIdMarca.ParameterName = "@idmarca";
-                parIdMarca.SqlDbType = SqlDbType.Image;
+                parIdMarca.SqlDbType = SqlDbType.Int;
                 parIdMarca.Value = Articulo.IdMarca;
                 cmd.Parameters.Add(parIdMarca);
 
                 Retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No ha sido posible insertar los registros indicados";
-
             }
             catch (Exception ex)
             {
@@ -227,7 +228,7 @@ namespace CapaDatos
                 ParId.Value = Articulo.IdArticulo;
                 cmd.Parameters.Add(ParId);
 
-                msgRetorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No ha sido posible ejecutar la accion eliminar";
+                msgRetorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se ha podido eliminar el Registro";
 
             }
             catch (Exception ex)
