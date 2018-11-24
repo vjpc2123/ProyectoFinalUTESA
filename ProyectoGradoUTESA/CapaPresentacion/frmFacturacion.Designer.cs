@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmCompra
+    partial class frmFacturacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompra));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -70,7 +68,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ErrorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader.SuspendLayout();
             this.tcCategoria.SuspendLayout();
             this.tpLista.SuspendLayout();
@@ -80,7 +77,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDetallesCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -92,7 +88,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1115, 30);
-            this.panelHeader.TabIndex = 3;
+            this.panelHeader.TabIndex = 4;
             // 
             // label1
             // 
@@ -100,9 +96,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Compra";
+            this.label1.Text = "Facturacion";
             // 
             // btnCerrar
             // 
@@ -119,7 +115,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(28, 30);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // tcCategoria
             // 
@@ -131,7 +126,7 @@
             this.tcCategoria.Name = "tcCategoria";
             this.tcCategoria.SelectedIndex = 0;
             this.tcCategoria.Size = new System.Drawing.Size(1115, 650);
-            this.tcCategoria.TabIndex = 5;
+            this.tcCategoria.TabIndex = 6;
             // 
             // tpLista
             // 
@@ -312,7 +307,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1101, 608);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCategoria
             // 
@@ -329,7 +323,6 @@
             this.btnCategoria.Size = new System.Drawing.Size(39, 36);
             this.btnCategoria.TabIndex = 24;
             this.btnCategoria.UseVisualStyleBackColor = false;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // button2
             // 
@@ -429,7 +422,6 @@
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Agregar";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnLimpiar
             // 
@@ -560,7 +552,6 @@
             this.btnGrabar.TabIndex = 4;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // txtCodigo
             // 
@@ -583,29 +574,23 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 9);
+            this.label2.Location = new System.Drawing.Point(468, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.Size = new System.Drawing.Size(141, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Compra.";
+            this.label2.Text = "Facturacion Cliente";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Buying_65px;
-            this.pictureBox1.Location = new System.Drawing.Point(511, 28);
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Sell_Stock_65px;
+            this.pictureBox1.Location = new System.Drawing.Point(513, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ErrorIcono
-            // 
-            this.ErrorIcono.BlinkRate = 400;
-            this.ErrorIcono.ContainerControl = this;
-            this.ErrorIcono.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorIcono.Icon")));
-            // 
-            // frmCompra
+            // frmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -613,8 +598,8 @@
             this.Controls.Add(this.tcCategoria);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmCompra";
-            this.Text = "frmCompra";
+            this.Name = "frmFacturacion";
+            this.Text = "frmFacturacion";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.tcCategoria.ResumeLayout(false);
@@ -628,7 +613,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDetallesCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -651,15 +635,15 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TabPage tpDetalle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox cbDetalles;
+        private System.Windows.Forms.DataGridView dtgvDetallesCompra;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.Label label6;
@@ -669,12 +653,11 @@
         private System.Windows.Forms.TextBox txtSuplidor;
         private System.Windows.Forms.TextBox txtIdSuplidor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox cbDetalles;
-        private System.Windows.Forms.DataGridView dtgvDetallesCompra;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnCategoria;
-        private System.Windows.Forms.ErrorProvider ErrorIcono;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

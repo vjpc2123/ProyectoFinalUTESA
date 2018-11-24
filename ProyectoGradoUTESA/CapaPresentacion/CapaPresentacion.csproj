@@ -89,6 +89,12 @@
     <Compile Include="frmCompra.Designer.cs">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturacion.Designer.cs">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="frmCompra.resx">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaDetalleCompra.resx">
       <DependentUpon>frmVistaDetalleCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaSuplidor.resx">
+      <DependentUpon>frmVistaSuplidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmVistaCategoria.resx">
       <DependentUpon>frmVistaCategoria.cs</DependentUpon>
@@ -366,6 +378,7 @@
     <None Include="Resources\Buying_65px.png" />
     <None Include="Resources\Add_25px.png" />
     <None Include="Resources\Minus_25px.png" />
+    <None Include="Resources\Sell Stock_65px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
