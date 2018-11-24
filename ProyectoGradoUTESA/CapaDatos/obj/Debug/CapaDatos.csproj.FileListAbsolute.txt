@@ -4,9 +4,3 @@ C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\bin\Debug\Cap
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.pdb
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\bin\Debug\CapaDatos.dll
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\bin\Debug\CapaDatos.pdb
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.dll
-D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaDatos\obj\Debug\CapaDatos.pdb
