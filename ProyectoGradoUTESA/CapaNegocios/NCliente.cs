@@ -10,13 +10,12 @@ namespace CapaNegocios
 {
     public class NCliente
     {
-        public static string Ingresar(string estatus, string tipocliente, string nombre, string apellido, string telefono,
+        public static string Ingresar(string estatus, string nombre, string apellido, string telefono,
             string direccion, string ciudad, string sector, string contacto, string telefonocontacto, string tipoidentificacion,
             string identificacion, string correoelectronico)
         {
             DCliente obj = new DCliente();
             obj.Estatus = estatus;
-            obj.TipoCliente = tipocliente;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Telefono = telefono;
@@ -31,14 +30,13 @@ namespace CapaNegocios
             return obj.InsetarCliente(obj);
         }
 
-        public static string Modificar(int idcliente, string estatus, string tipocliente, string nombre, string apellido, string telefono,
+        public static string Modificar(int idcliente, string estatus, string nombre, string apellido, string telefono,
             string direccion, string ciudad, string sector, string contacto, string telefonocontacto, string tipoidentificacion,
             string identificacion, string correoelectronico)
         {
             DCliente obj = new DCliente();
             obj.IdCliente = idcliente;
             obj.Estatus = estatus;
-            obj.TipoCliente = tipocliente;
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Telefono = telefono;

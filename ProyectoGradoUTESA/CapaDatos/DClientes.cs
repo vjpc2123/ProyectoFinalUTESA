@@ -15,8 +15,6 @@ namespace CapaDatos
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
         private string _estatus;
         public string Estatus { get => _estatus; set => _estatus = value; }
-        private string _tipoCliente;
-        public string TipoCliente { get => _tipoCliente; set => _tipoCliente = value; }
         private string _nombre;
         public string Nombre { get => _nombre; set => _nombre = value; }
         private string _apellido;
@@ -48,13 +46,12 @@ namespace CapaDatos
         {
 
         }
-        public DCliente(int idcliente, string estatus, string tipocliente, string nombre, string apellido,
+        public DCliente(int idcliente, string estatus, string nombre, string apellido,
             string telefono, string direccion, string ciudad, string sector, string contacto, string telefonocontacto,
             string tipoidentificacion, string identificacion, string correoelectronico, string buscador)
         {
             this.IdCliente = idcliente;
             this.Estatus = estatus;
-            this.TipoCliente = tipocliente;
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Telefono = telefono;
@@ -96,13 +93,6 @@ namespace CapaDatos
                 parEstatus.Size = 10;
                 parEstatus.Value = Clientes.Estatus;
                 cmd.Parameters.Add(parEstatus);
-
-                SqlParameter parTipoCliente = new SqlParameter();
-                parTipoCliente.ParameterName = "@tipocliente";
-                parTipoCliente.SqlDbType = SqlDbType.VarChar;
-                parTipoCliente.Size = 10;
-                parTipoCliente.Value = Clientes.TipoCliente;
-                cmd.Parameters.Add(parTipoCliente);
 
                 SqlParameter parNombre = new SqlParameter();
                 parNombre.ParameterName = "@nombre";
@@ -223,13 +213,6 @@ namespace CapaDatos
                 parEstatus.Size = 10;
                 parEstatus.Value = Clientes.Estatus;
                 cmd.Parameters.Add(parEstatus);
-
-                SqlParameter parTipoCliente = new SqlParameter();
-                parTipoCliente.ParameterName = "@tipocliente";
-                parTipoCliente.SqlDbType = SqlDbType.VarChar;
-                parTipoCliente.Size = 10;
-                parTipoCliente.Value = Clientes.TipoCliente;
-                cmd.Parameters.Add(parTipoCliente);
 
                 SqlParameter parNombre = new SqlParameter();
                 parNombre.ParameterName = "@nombre";
