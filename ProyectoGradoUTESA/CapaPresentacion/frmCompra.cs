@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaNegocios;
 namespace CapaPresentacion
 {
     public partial class frmCompra : Form
@@ -42,6 +42,15 @@ namespace CapaPresentacion
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCompra_Load(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -35,6 +35,12 @@ namespace CapaNegocios
             obj.CompraNeto = compraneto;
             return obj.Insertar_DetalleCompra(obj);
         }
+
+        public static string DevolverIDCompra()
+        {
+            DCompras obj = new DCompras();
+            return obj.DevolverIDCompra();
+        }
     }
 
 }

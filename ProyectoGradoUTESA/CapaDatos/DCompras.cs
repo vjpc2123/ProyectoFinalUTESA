@@ -69,10 +69,12 @@ namespace CapaDatos
             this.CompraNeto = comprabruto;
         }
 
+        
         public string InsertarCompra(DCompras Compras)
         {
 
             string retorno = "";
+            
             Conexion con = new Conexion();
 
             try
@@ -118,6 +120,7 @@ namespace CapaDatos
                 
 
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
+                
             }
             catch (Exception ex)
             {
@@ -129,6 +132,33 @@ namespace CapaDatos
 
 
             return retorno;
+
+             
+        }
+        public string DevolverIDCompra()
+        {
+            string retorno = "";
+
+            Conexion con = new Conexion();
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con.AbriConexion();
+                cmd.CommandText = "Devolver_IDCompra";
+                cmd.CommandType = CommandType.StoredProcedure;
+                retorno = Convert.ToString(cmd.ExecuteScalar()) ;
+            }
+            catch (Exception ex)
+            {
+
+                retorno = ex.Message;
+            }
+            finally { con.CerrarConexion(); }
+
+            return retorno;
+
         }
         public string Insertar_DetalleCompra(DCompras Compras)
         {
