@@ -10,13 +10,20 @@ namespace CapaNegocios
 {
     public class NSuplidor
     {
+<<<<<<< HEAD:ProyectoGradoUTESA/CapaNegocios/NSuplidor.cs
         public static string Ingresar(string estatus, string tiposupllidor, string nombre, string apellido, string telefono,
+=======
+        public static string Ingresar(string estatus, string nombre, string apellido, string telefono,
+>>>>>>> Formulario Cliente Done:ProyectoGradoUTESA/CapaNegocios/NCliente.cs
             string direccion, string ciudad, string sector, string contacto, string telefonocontacto, string tipoidentificacion,
             string identificacion, string correoelectronico)
         {
             DSuplidor obj = new DSuplidor();
             obj.Estatus = estatus;
+<<<<<<< HEAD:ProyectoGradoUTESA/CapaNegocios/NSuplidor.cs
             obj.TipoSuplidor = tiposupllidor;
+=======
+>>>>>>> Formulario Cliente Done:ProyectoGradoUTESA/CapaNegocios/NCliente.cs
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Telefono = telefono;
@@ -31,14 +38,21 @@ namespace CapaNegocios
             return obj.InsetarSuplidor(obj);
         }
 
+<<<<<<< HEAD:ProyectoGradoUTESA/CapaNegocios/NSuplidor.cs
         public static string Modificar(int idsuplidor, string estatus, string tiposupllidor, string nombre, string apellido, string telefono,
+=======
+        public static string Modificar(int idcliente, string estatus, string nombre, string apellido, string telefono,
+>>>>>>> Formulario Cliente Done:ProyectoGradoUTESA/CapaNegocios/NCliente.cs
             string direccion, string ciudad, string sector, string contacto, string telefonocontacto, string tipoidentificacion,
             string identificacion, string correoelectronico)
         {
             DSuplidor obj = new DSuplidor();
             obj.IdSuplidor = idsuplidor;
             obj.Estatus = estatus;
+<<<<<<< HEAD:ProyectoGradoUTESA/CapaNegocios/NSuplidor.cs
             obj.TipoSuplidor = tiposupllidor;
+=======
+>>>>>>> Formulario Cliente Done:ProyectoGradoUTESA/CapaNegocios/NCliente.cs
             obj.Nombre = nombre;
             obj.Apellido = apellido;
             obj.Telefono = telefono;
