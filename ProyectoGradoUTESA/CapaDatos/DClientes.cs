@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class DClientes
+    public class DCliente
     {
+        #region Declaracion de objetos
         private int _idCliente;
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         
@@ -41,6 +45,35 @@ namespace CapaDatos
         private string _buscador;
         public string Buscador { get => _buscador; set => _buscador = value; }
 
+=======
+        private string _estatus;
+        public string Estatus { get => _estatus; set => _estatus = value; }
+        private string _nombre;
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        private string _apellido;
+        public string Apellido { get => _apellido; set => _apellido = value; }
+        private string _telefono;
+        public string Telefono { get => _telefono; set => _telefono = value; }
+        private string _direccion;
+        public string Direccion { get => _direccion; set => _direccion = value; }
+        private string _ciudad;
+        public string Ciudad { get => _ciudad; set => _ciudad = value; }
+        private string _sector;
+        public string Sector { get => _sector; set => _sector = value; }
+        private string _contacto;
+        public string Contacto { get => _contacto; set => _contacto = value; }
+        private string _telefonoContacto;
+        public string TelefonoContacto { get => _telefonoContacto; set => _telefonoContacto = value; }
+        private string _tipoIdentificacion;
+        public string TipoIdentificacion { get => _tipoIdentificacion; set => _tipoIdentificacion = value; }
+        private string _identificacion;
+        public string Identificacion { get => _identificacion; set => _identificacion = value; }
+        private string _correo;
+        public string CorreoElectronico { get => _correo; set => _correo = value; }
+        private string _buscador;
+        public string Buscador { get => _buscador; set => _buscador = value; }
+
+>>>>>>> 3689ae07fe54ffea1432a3e3c739228535926a48
         #endregion
 
         public DCliente()
@@ -433,6 +466,9 @@ namespace CapaDatos
             }
             return dtretur;
         }
+<<<<<<< HEAD
 >>>>>>> Formulario Cliente Done
+=======
+>>>>>>> 3689ae07fe54ffea1432a3e3c739228535926a48
     }
 }
