@@ -127,6 +127,7 @@ C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\De
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmVistaArticulo.resources
 <<<<<<< HEAD
 C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmFacturacion.resources
+<<<<<<< HEAD
 =======
 D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaPresentacion\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -259,3 +260,6 @@ D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\Proyect
 D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 D:\User files\Files\Universidad\Proyecto_grado_victor\ProyectoFinalUTESA\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 >>>>>>> 3689ae07fe54ffea1432a3e3c739228535926a48
+=======
+C:\Users\Vjpc\Desktop\C#ProyectoFinal\ProyectoGradoUTESA\CapaPresentacion\obj\Debug\CapaPresentacion.frmVistaSuplidor.resources
+>>>>>>> ec458c69120c98afb9db3e910d4807a2cfc2dadc

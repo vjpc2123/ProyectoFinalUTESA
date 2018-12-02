@@ -273,6 +273,9 @@
     <EmbeddedResource Include="Vistas\frmVistaPresentacion.resx">
       <DependentUpon>frmVistaPresentacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmVistaSuplidor.resx">
+      <DependentUpon>frmVistaSuplidor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmVistaUbicacion.resx">
       <DependentUpon>frmVistaUbicacion.cs</DependentUpon>
     </EmbeddedResource>

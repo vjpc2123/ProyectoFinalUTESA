@@ -95,7 +95,7 @@ namespace CapaPresentacion
             try
             {
                 int valor = Convert.ToInt32(txtDescuento.Text);
-                if (valor > 50)
+                if (valor > 100)
                 {
                     MsgError("El porcentaje no puede ser mayor al 50% del articulo.");
                     txtDescuento.Text = "0";
@@ -199,29 +199,54 @@ namespace CapaPresentacion
 
                 else
                 {
-                   /*
-                        msgRespuesta = NCompras.IngresarDetalleCompra(txtNombre.Text.Trim(), txtDescripcion.Text.Trim(), txtCategoriaID.Text, txtPresentacionID.Text, txtUbicacionID.Text, txtMarcaID.Text, imagen);
+                    decimal comprabruto;
+                    int CANTIDAD = Convert.ToInt32(txtCantidad.Text);
                     
-                    
-                    if (msgRespuesta.Equals("Ok"))
+                    comprabruto = CANTIDAD * costo;
+                    decimal descuentogenerado = comprabruto * (descuento / 100);
+
+                    decimal compramenosdescuento = comprabruto - descuentogenerado;
+                    decimal subtotal = 0;
+                    decimal itbis = 18;
+                    decimal totalitbis = 0;
+                    if (cbITBIS.Checked == true)
                     {
-                        if (N)
-                        {
-                            MsgConfirmacion("Se han guardado los datos correctamente");
-                        }
-                        else
-                        {
-                            MsgConfirmacion("Se han editado los datos correctamente");
-                        }
-                        N = false;
-                        E = false;
-                        HoB_btn();
-                        limpiar();
-                        MostrarDatos();
-                        ErrorIcono.Clear();
+
+                      totalitbis  = compramenosdescuento * (itbis / 100);
+                        subtotal = totalitbis;
+
                     }
-                    else { MsgError(msgRespuesta); }
-                */}
+                    else
+                    {
+                        subtotal = compramenosdescuento;
+                    }
+
+                    frmCompra FRM = new frmCompra();
+                        msgRespuesta = NCompras.IngresarDetalleCompra(Convert.ToInt32(FRM.txtCodigoC.Text),Convert.ToInt32(txtIDArticulo.Text),Convert.ToInt32(txtCantidad.Text)
+                            ,Convert.ToDecimal(txtCosto.Text),comprabruto,descuentogenerado,totalitbis,subtotal);
+
+                    /*
+
+                     if (msgRespuesta.Equals("Ok"))
+                     {
+                         if (N)
+                         {
+                             MsgConfirmacion("Se han guardado los datos correctamente");
+                         }
+                         else
+                         {
+                             MsgConfirmacion("Se han editado los datos correctamente");
+                         }
+                         N = false;
+                         E = false;
+                         HoB_btn();
+                         limpiar();
+                         MostrarDatos();
+                         ErrorIcono.Clear();
+                     }
+                     else { MsgError(msgRespuesta); }
+                 */
+                }
             }
 
             catch (Exception ex)

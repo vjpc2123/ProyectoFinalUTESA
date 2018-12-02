@@ -23,6 +23,8 @@ namespace CapaDatos
         public string TipoDocumento { get => _tipoDocumento; set => _tipoDocumento = value; }
         private DateTime _fechaCompra;
         public DateTime FechaCompra { get => _fechaCompra; set => _fechaCompra = value; }
+        private string _detalle;
+        public string Detalles { get => _detalle; set => _detalle = value; }
         
         #endregion
 
@@ -48,13 +50,14 @@ namespace CapaDatos
      
         #endregion 
         public DCompras() { }
-        public DCompras(int idcompra, int idproveedor, string ncf,string tipodocumento, DateTime fecha)
+        public DCompras(int idcompra, int idproveedor, string ncf,string tipodocumento, DateTime fecha, string detalles)
         {
             this.IDCompra = idcompra;
             this.IDProveedor = idproveedor;
             this.NCF = ncf;
             this.TipoDocumento = tipodocumento;
             this.FechaCompra = fecha;
+            this.Detalles = detalles;
         }
         public DCompras(int iddetallecompra,int idcompra2,int idarticulo,int cantidad, decimal costounitario,decimal comprabruto, decimal descuento,decimal itbis, decimal compraneto)
         {
@@ -105,18 +108,18 @@ namespace CapaDatos
                 NumeroComprobante.Value = Compras.NCF;
                 cmd.Parameters.Add(NumeroComprobante);
 
-                SqlParameter parTipoDocumento = new SqlParameter();
-                parTipoDocumento.ParameterName = "@TipoDocumento";
-                parTipoDocumento.SqlDbType = SqlDbType.VarChar;
-                parTipoDocumento.Size = 20;
-                parTipoDocumento.Value = Compras.TipoDocumento;
-                cmd.Parameters.Add(parTipoDocumento);
-
                 SqlParameter parFechaCompra = new SqlParameter();
                 parFechaCompra.ParameterName = "@FechaCompra";
                 parFechaCompra.SqlDbType = SqlDbType.Date;
                 parFechaCompra.Value = Compras.FechaCompra;
                 cmd.Parameters.Add(parFechaCompra);
+
+                SqlParameter parDetalles = new SqlParameter();
+                parDetalles.ParameterName = "@detalles";
+                parDetalles.SqlDbType = SqlDbType.VarChar;
+                parDetalles.Size = 150;
+                parDetalles.Value = Compras.Detalles;
+                cmd.Parameters.Add(parDetalles);
                 
 
                 retorno = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No es posible ingresar los datos";
@@ -212,19 +215,19 @@ namespace CapaDatos
                 cmd.Parameters.Add(parCostoBruto);
 
                 SqlParameter parDescuento = new SqlParameter();
-                parDescuento.ParameterName = "@CompraBruto";
+                parDescuento.ParameterName = "@Descuento";
                 parDescuento.SqlDbType = SqlDbType.Decimal;
                 parDescuento.Value = Compras.Descuento;
                 cmd.Parameters.Add(parDescuento);
 
                 SqlParameter parITBIS = new SqlParameter();
-                parITBIS.ParameterName = "@CompraBruto";
+                parITBIS.ParameterName = "@ITBIS";
                 parITBIS.SqlDbType = SqlDbType.Decimal;
-                parITBIS.Value = Compras.CompraBruto;
+                parITBIS.Value = Compras.ITBIS;
                 cmd.Parameters.Add(parITBIS);
 
                 SqlParameter parCompraNeto = new SqlParameter();
-                parCompraNeto.ParameterName = "@CompraBruto";
+                parCompraNeto.ParameterName = "@CompraNeto";
                 parCompraNeto.SqlDbType = SqlDbType.Decimal;
                 parCompraNeto.Value = Compras.CompraNeto;
                 cmd.Parameters.Add(parCompraNeto);
