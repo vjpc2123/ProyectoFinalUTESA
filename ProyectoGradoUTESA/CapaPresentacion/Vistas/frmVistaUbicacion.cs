@@ -153,5 +153,10 @@ namespace CapaPresentacion.Vistas
 
             }
         }
+
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

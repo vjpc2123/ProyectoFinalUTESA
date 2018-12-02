@@ -141,7 +141,7 @@
             this.tpLista.Location = new System.Drawing.Point(4, 24);
             this.tpLista.Name = "tpLista";
             this.tpLista.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLista.Size = new System.Drawing.Size(923, 579);
+            this.tpLista.Size = new System.Drawing.Size(1112, 650);
             this.tpLista.TabIndex = 0;
             this.tpLista.Text = "Lista";
             this.tpLista.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
             this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.Print_25px;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(812, 3);
+            this.btnImprimir.Location = new System.Drawing.Point(996, 0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(108, 34);
             this.btnImprimir.TabIndex = 3;
@@ -218,7 +218,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Search_25px;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(694, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(878, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(108, 34);
             this.btnBuscar.TabIndex = 2;
@@ -235,7 +235,7 @@
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Image = global::CapaPresentacion.Properties.Resources.Trash_25px;
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(0, 536);
+            this.btnBorrar.Location = new System.Drawing.Point(0, 599);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(256, 43);
             this.btnBorrar.TabIndex = 4;
@@ -255,7 +255,7 @@
             this.dtgvListado.Location = new System.Drawing.Point(-4, 40);
             this.dtgvListado.Name = "dtgvListado";
             this.dtgvListado.ReadOnly = true;
-            this.dtgvListado.Size = new System.Drawing.Size(931, 494);
+            this.dtgvListado.Size = new System.Drawing.Size(1108, 553);
             this.dtgvListado.TabIndex = 14;
             // 
             // Eliminar
@@ -463,11 +463,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(795, 28);
+            this.label6.Location = new System.Drawing.Point(771, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 18);
+            this.label6.Size = new System.Drawing.Size(151, 18);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Fecha de Compra";
+            this.label6.Text = "Fecha de Facturacion";
             // 
             // dateTimePicker1
             // 
@@ -481,11 +481,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(642, 84);
+            this.label5.Location = new System.Drawing.Point(678, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 18);
+            this.label5.Size = new System.Drawing.Size(39, 18);
             this.label5.TabIndex = 13;
-            this.label5.Text = "NCF Suplidor";
+            this.label5.Text = "NCF";
             // 
             // textBox3
             // 
@@ -515,9 +515,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(29, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Suplidor";
+            this.label4.Text = "Cliente";
             // 
             // btnEditar
             // 
@@ -574,11 +574,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 9);
+            this.label2.Location = new System.Drawing.Point(493, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Compra.";
+            this.label2.Text = "Facturacion";
             // 
             // pictureBox1
             // 

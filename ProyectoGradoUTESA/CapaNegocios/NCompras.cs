@@ -10,21 +10,19 @@ namespace CapaNegocios
     public class NCompras
 
     {
-        public static string IngresarCompra(int idcompra, int idproveedor, string NCF, string tipoDocumento, DateTime fechaCompra)
+        public static string IngresarCompra( int idproveedor, string NCF, DateTime fechaCompra,string detalles)
         {
             DCompras obj = new DCompras();
-            obj.IDCompra = idcompra;
             obj.IDProveedor = idproveedor;
             obj.NCF = NCF;
-            obj.TipoDocumento = tipoDocumento;
             obj.FechaCompra = fechaCompra;
+            obj.Detalles = detalles;
             return obj.InsertarCompra(obj);
         }
 
-        public static string IngresarDetalleCompra(int iddetallecompra,int idcompra2,int idarticulo,int cantidad,decimal costounitario,decimal comprabruto,decimal descuento, decimal itbis, decimal compraneto)
+        public static string IngresarDetalleCompra(int idcompra2,int idarticulo,int cantidad,decimal costounitario,decimal comprabruto,decimal descuento, decimal itbis, decimal compraneto)
         {
             DCompras obj = new DCompras();
-            obj.IDDetalleCompra = iddetallecompra;
             obj.IDCompra2 = idcompra2;
             obj.IDArticulo = idarticulo;
             obj.Cantidad = cantidad;
